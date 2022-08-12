@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2021 at 07:42 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- Waktu pembuatan: 12 Agu 2022 pada 07.09
+-- Versi server: 10.4.20-MariaDB
+-- Versi PHP: 7.4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,15 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bimbinganakademik`
+-- Database: `mentoring`
 --
-CREATE DATABASE IF NOT EXISTS `bimbinganakademik` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `bimbinganakademik`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -45,7 +42,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `nomor_induk`, `nama`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `no_telephone`, `jenis_kelamin`, `keterangan`, `gambar`, `users_id`) VALUES
@@ -62,7 +59,7 @@ INSERT INTO `admin` (`id_admin`, `nomor_induk`, `nama`, `tempat_lahir`, `tanggal
 -- --------------------------------------------------------
 
 --
--- Table structure for table `amalan`
+-- Struktur dari tabel `amalan`
 --
 
 CREATE TABLE `amalan` (
@@ -71,13 +68,194 @@ CREATE TABLE `amalan` (
   `waktu` time NOT NULL,
   `sub_kategori_id` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL DEFAULT '0',
-  `siswa_id` int(11) NOT NULL
+  `siswa_id` int(11) NOT NULL,
+  `kelas_siswa_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `amalan`
+--
+
+INSERT INTO `amalan` (`id_amalan`, `tanggal`, `waktu`, `sub_kategori_id`, `status`, `siswa_id`, `kelas_siswa_id`) VALUES
+(158602, '2021-10-18', '23:57:15', 1, '1', 3756, 41),
+(158603, '2021-10-18', '23:57:15', 3, '1', 3756, 41),
+(158604, '2021-10-18', '23:57:15', 4, '1', 3756, 41),
+(158605, '2021-10-18', '23:57:15', 5, '1', 3756, 41),
+(158606, '2021-10-18', '23:57:15', 6, '1', 3756, 41),
+(158607, '2021-10-18', '23:57:15', 7, '1', 3756, 41),
+(158608, '2021-10-18', '23:57:15', 8, '1', 3756, 41),
+(158609, '2021-10-18', '23:57:15', 9, '1', 3756, 41),
+(158610, '2021-10-18', '23:57:15', 10, '1', 3756, 41),
+(158611, '2021-10-18', '23:57:15', 11, '1', 3756, 41),
+(158612, '2021-10-18', '23:57:15', 12, '1', 3756, 41),
+(158613, '2021-10-18', '23:57:15', 14, '1', 3756, 41),
+(158614, '2021-10-18', '23:57:15', 17, '1', 3756, 41),
+(158615, '2021-10-18', '23:57:15', 19, '1', 3756, 41),
+(158616, '2021-10-18', '23:57:15', 20, '1', 3756, 41),
+(158617, '2021-10-18', '23:57:15', 21, '1', 3756, 41),
+(158618, '2021-10-18', '23:57:15', 22, '1', 3756, 41),
+(158619, '2021-10-18', '23:57:15', 23, '1', 3756, 41),
+(158620, '2021-10-18', '23:57:15', 26, '1', 3756, 41),
+(158621, '2021-10-18', '23:57:15', 27, '1', 3756, 41),
+(158622, '2021-10-18', '23:57:15', 29, '1', 3756, 41),
+(158623, '2021-10-18', '23:57:15', 31, '1', 3756, 41),
+(158624, '2021-10-19', '00:17:28', 1, '1', 3756, 41),
+(158625, '2021-10-19', '00:17:28', 3, '1', 3756, 41),
+(158626, '2021-10-19', '00:17:28', 4, '1', 3756, 41),
+(158627, '2021-10-19', '00:17:28', 5, '1', 3756, 41),
+(158628, '2021-10-19', '00:17:28', 6, '1', 3756, 41),
+(158629, '2021-10-19', '00:17:28', 7, '1', 3756, 41),
+(158630, '2021-10-19', '00:17:28', 8, '1', 3756, 41),
+(158631, '2021-10-19', '08:29:08', 1, '1', 4574, 36),
+(158632, '2021-10-19', '08:29:08', 3, '1', 4574, 36),
+(158633, '2021-10-19', '08:29:08', 4, '1', 4574, 36),
+(158634, '2021-10-19', '08:29:08', 5, '1', 4574, 36),
+(158635, '2021-10-19', '08:29:08', 6, '1', 4574, 36),
+(158636, '2021-10-19', '08:29:08', 7, '1', 4574, 36),
+(158637, '2021-10-19', '08:29:08', 8, '1', 4574, 36),
+(158638, '2021-10-19', '08:29:08', 9, '1', 4574, 36),
+(158639, '2021-10-19', '08:37:15', 1, '1', 2258, 40),
+(158640, '2021-10-19', '08:37:15', 3, '1', 2258, 40),
+(158641, '2021-10-19', '08:37:15', 4, '1', 2258, 40),
+(158642, '2021-10-19', '08:37:15', 5, '1', 2258, 40),
+(158643, '2021-10-19', '08:37:15', 6, '1', 2258, 40),
+(158644, '2021-10-19', '08:37:15', 7, '1', 2258, 40),
+(158645, '2021-10-19', '08:37:15', 8, '1', 2258, 40),
+(158646, '2021-10-19', '08:37:15', 10, '1', 2258, 40),
+(158647, '2021-10-20', '13:57:44', 1, '1', 5241, 43),
+(158648, '2021-10-20', '13:57:45', 3, '1', 5241, 43),
+(158649, '2021-10-20', '13:57:45', 4, '1', 5241, 43),
+(158650, '2021-10-20', '13:57:45', 5, '1', 5241, 43),
+(158651, '2021-10-20', '13:57:45', 6, '1', 5241, 43),
+(158652, '2021-10-20', '13:57:45', 7, '1', 5241, 43),
+(158653, '2021-10-20', '13:57:45', 8, '1', 5241, 43),
+(158654, '2021-10-20', '13:57:45', 9, '1', 5241, 43),
+(158655, '2021-10-20', '13:57:45', 10, '1', 5241, 43),
+(158656, '2021-10-20', '13:57:45', 11, '1', 5241, 43),
+(158657, '2021-10-20', '13:57:45', 12, '1', 5241, 43),
+(158658, '2021-10-20', '13:57:45', 13, '1', 5241, 43),
+(158659, '2021-10-20', '13:57:45', 14, '1', 5241, 43),
+(158660, '2021-10-20', '13:57:45', 15, '1', 5241, 43),
+(158661, '2021-10-20', '13:57:45', 16, '1', 5241, 43),
+(158662, '2021-10-20', '13:57:45', 17, '1', 5241, 43),
+(158663, '2021-10-20', '13:57:45', 18, '1', 5241, 43),
+(158664, '2021-10-20', '13:57:45', 19, '1', 5241, 43),
+(158665, '2021-10-20', '13:57:45', 20, '1', 5241, 43),
+(158666, '2021-10-20', '13:57:45', 21, '1', 5241, 43),
+(158667, '2021-10-20', '13:57:45', 22, '1', 5241, 43),
+(158668, '2021-10-20', '13:57:45', 23, '1', 5241, 43),
+(158669, '2021-10-20', '13:57:45', 24, '1', 5241, 43),
+(158670, '2021-10-20', '13:57:45', 33, '1', 5241, 43),
+(158671, '2021-10-20', '13:57:45', 25, '1', 5241, 43),
+(158672, '2021-10-20', '13:57:45', 26, '1', 5241, 43),
+(158673, '2021-10-20', '13:57:45', 27, '1', 5241, 43),
+(158674, '2021-10-20', '13:57:45', 28, '1', 5241, 43),
+(158675, '2021-10-20', '13:57:45', 29, '1', 5241, 43),
+(158676, '2021-10-20', '13:57:45', 30, '1', 5241, 43),
+(158677, '2021-10-20', '13:57:45', 31, '1', 5241, 43),
+(158678, '2021-10-20', '13:57:45', 32, '1', 5241, 43),
+(158679, '2021-10-21', '12:05:35', 1, '1', 5834, 43),
+(158680, '2021-10-21', '12:05:35', 3, '1', 5834, 43),
+(158681, '2021-10-21', '12:05:35', 4, '1', 5834, 43),
+(158682, '2021-10-21', '12:05:35', 5, '1', 5834, 43),
+(158683, '2021-10-21', '12:05:35', 6, '1', 5834, 43),
+(158684, '2021-10-21', '22:35:16', 10, '1', 5524, 45),
+(158685, '2021-10-21', '22:35:16', 17, '1', 5524, 45),
+(158686, '2021-10-21', '22:35:16', 18, '1', 5524, 45),
+(158687, '2021-10-21', '22:35:16', 19, '1', 5524, 45),
+(158693, '2021-10-21', '23:18:23', 3, '1', 4614, 44),
+(158694, '2021-10-21', '23:18:23', 4, '1', 4614, 44),
+(158695, '2021-10-21', '23:18:23', 5, '1', 4614, 44),
+(158696, '2021-10-21', '23:18:23', 6, '1', 4614, 44),
+(158697, '2021-10-21', '23:18:23', 10, '1', 4614, 44),
+(158698, '2021-10-21', '23:18:23', 11, '1', 4614, 44),
+(158699, '2021-10-21', '23:18:23', 12, '1', 4614, 44),
+(158700, '2021-10-21', '23:18:23', 13, '1', 4614, 44),
+(158701, '2021-10-21', '23:18:23', 14, '1', 4614, 44),
+(158702, '2021-10-21', '23:18:23', 15, '1', 4614, 44),
+(158703, '2021-10-21', '23:18:23', 16, '1', 4614, 44),
+(158704, '2021-10-21', '23:28:37', 1, '1', 2346, 35),
+(158705, '2021-10-21', '23:28:37', 3, '1', 2346, 35),
+(158706, '2021-10-21', '23:28:37', 4, '1', 2346, 35),
+(158707, '2021-10-21', '23:28:37', 5, '1', 2346, 35),
+(158708, '2021-10-21', '23:28:37', 6, '1', 2346, 35),
+(158709, '2021-10-21', '23:42:50', 7, '1', 5260, 38),
+(158710, '2021-10-21', '23:42:50', 8, '1', 5260, 38),
+(158711, '2021-10-21', '23:42:50', 9, '1', 5260, 38),
+(158712, '2021-10-22', '00:42:08', 7, '1', 4688, 37),
+(158713, '2021-10-22', '00:42:08', 8, '1', 4688, 37),
+(158714, '2021-10-22', '00:42:08', 9, '1', 4688, 37),
+(158715, '2021-10-22', '00:51:40', 17, '1', 3714, 36),
+(158716, '2021-10-22', '00:51:40', 18, '1', 3714, 36),
+(158717, '2021-10-22', '00:51:40', 19, '1', 3714, 36),
+(158718, '2021-10-22', '01:02:45', 1, '1', 2745, 34),
+(158719, '2021-10-22', '01:02:45', 3, '1', 2745, 34),
+(158720, '2021-10-22', '01:02:45', 4, '1', 2745, 34),
+(158721, '2021-10-22', '01:02:45', 5, '1', 2745, 34),
+(158722, '2021-10-22', '01:02:45', 6, '1', 2745, 34),
+(158723, '2021-10-22', '01:02:45', 10, '1', 2745, 34),
+(158724, '2021-10-22', '01:10:48', 1, '1', 2257, 40),
+(158725, '2021-10-22', '01:10:48', 3, '1', 2257, 40),
+(158726, '2021-10-22', '01:10:48', 4, '1', 2257, 40),
+(158727, '2021-10-22', '01:10:48', 5, '1', 2257, 40),
+(158728, '2021-10-22', '01:10:48', 6, '1', 2257, 40),
+(158729, '2021-10-22', '01:47:34', 7, '1', 5237, 46),
+(158730, '2021-10-22', '01:47:34', 8, '1', 5237, 46),
+(158731, '2021-10-22', '01:47:34', 9, '1', 5237, 46),
+(158732, '2021-10-22', '02:03:38', 8, '1', 4714, 42),
+(158733, '2021-10-22', '02:03:38', 9, '1', 4714, 42),
+(158734, '2021-10-22', '02:03:38', 10, '1', 4714, 42),
+(158735, '2021-10-22', '02:03:38', 12, '1', 4714, 42),
+(158736, '2021-10-22', '02:03:38', 13, '1', 4714, 42),
+(158737, '2021-10-22', '02:03:38', 14, '1', 4714, 42),
+(158738, '2021-10-22', '02:06:29', 1, '1', 2718, 39),
+(158739, '2021-10-22', '02:06:29', 3, '1', 2718, 39),
+(158740, '2021-10-22', '02:06:29', 4, '1', 2718, 39),
+(158741, '2021-10-22', '02:06:29', 5, '1', 2718, 39),
+(158742, '2021-10-22', '02:06:29', 6, '1', 2718, 39),
+(158743, '2021-10-22', '02:12:16', 1, '1', 2279, 47),
+(158744, '2021-10-22', '02:12:16', 3, '1', 2279, 47),
+(158745, '2021-10-22', '02:12:16', 4, '1', 2279, 47),
+(158746, '2021-10-22', '02:12:16', 5, '1', 2279, 47),
+(158747, '2021-10-22', '02:12:16', 6, '1', 2279, 47),
+(158753, '2021-10-22', '13:29:00', 1, '1', 3584, 39),
+(158754, '2021-10-22', '13:29:00', 3, '1', 3584, 39),
+(158755, '2021-10-22', '13:29:00', 4, '1', 3584, 39),
+(158756, '2021-10-22', '13:29:00', 5, '1', 3584, 39),
+(158757, '2021-10-22', '13:29:00', 6, '1', 3584, 39),
+(158789, '2021-10-22', '10:54:15', 1, '1', 4735, 50),
+(158790, '2021-10-22', '10:54:15', 3, '1', 4735, 50),
+(158791, '2021-10-22', '10:54:15', 4, '1', 4735, 50),
+(158792, '2021-10-22', '10:54:15', 5, '1', 4735, 50),
+(158793, '2021-10-22', '10:54:15', 6, '1', 4735, 50),
+(158794, '2021-10-22', '10:54:15', 7, '1', 4735, 50),
+(158795, '2021-10-22', '10:54:15', 8, '1', 4735, 50),
+(158796, '2021-10-22', '10:54:15', 11, '1', 4735, 50),
+(158797, '2021-10-22', '10:54:15', 13, '1', 4735, 50),
+(158798, '2021-10-22', '10:54:15', 15, '1', 4735, 50),
+(158799, '2021-10-22', '10:54:15', 21, '1', 4735, 50),
+(158800, '2021-10-22', '10:54:15', 22, '1', 4735, 50),
+(158801, '2021-10-22', '10:54:15', 33, '1', 4735, 50),
+(158802, '2021-10-22', '10:54:15', 28, '1', 4735, 50),
+(158803, '2021-10-22', '10:54:47', 1, '1', 4867, 50),
+(158804, '2021-10-22', '10:54:47', 3, '1', 4867, 50),
+(158805, '2021-10-22', '10:54:47', 4, '1', 4867, 50),
+(158806, '2021-10-22', '10:54:47', 5, '1', 4867, 50),
+(158807, '2021-10-22', '10:54:47', 6, '1', 4867, 50),
+(158821, '2021-10-22', '16:08:03', 1, '1', 5112, 50),
+(158822, '2021-10-22', '16:08:03', 3, '1', 5112, 50),
+(158823, '2021-10-22', '16:08:03', 4, '1', 5112, 50),
+(158824, '2021-10-22', '16:08:03', 5, '1', 5112, 50),
+(158825, '2021-10-22', '16:08:03', 6, '1', 5112, 50),
+(158826, '2021-10-22', '16:08:03', 25, '1', 5112, 50),
+(158827, '2021-10-22', '16:08:03', 26, '1', 5112, 50),
+(158828, '2021-10-22', '16:08:03', 27, '1', 5112, 50),
+(158829, '2021-10-22', '16:08:03', 29, '1', 5112, 50);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `guru`
+-- Struktur dari tabel `guru`
 --
 
 CREATE TABLE `guru` (
@@ -96,76 +274,75 @@ CREATE TABLE `guru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `guru`
+-- Dumping data untuk tabel `guru`
 --
 
 INSERT INTO `guru` (`id_guru`, `nomor_induk`, `nama`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `no_telephone`, `jenis_kelamin`, `keterangan`, `gambar`, `status_ttq`, `users_id`) VALUES
-(29, '130517106\r\n', 'RAHMAD ABDILLAH, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 272),
-(30, '198111132007102003\r\n', 'LESTARI HANDAYANI, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'y', 288),
-(31, '13210200', 'YUSRA, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'y', 289),
-(32, '197403192008012015\r\n', 'YELFI VITRIANI, S.KOM., M.M.SI.', 'Palembang', '1978-03-14', 'Pekanbaru', '081368228044', 'P', 'Lengkap', 'default_female.png', 'y', 312),
-(33, '198705242015031006\r\n', 'TEDDIE DARMIZAL, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 313),
-(34, '130517103\r\n', 'SUWANTO SANJAYA, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 334),
-(35, '197608302011011003\r\n', 'SURYA AGUSTIAN, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 335),
-(36, '197711282007101003\r\n', 'NOVRIYANTO, S.T., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 358),
-(37, '197805082007101007\r\n', 'MUHAMMAD IRSYAD, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 359),
-(38, '198612062015031004\r\n', 'MUHAMMAD AFFANDES, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 379),
-(39, '198108142006042002\r\n', 'FITRA KURNIA, S.KOM., M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'y', 380),
-(40, '198102062009121003\r\n', 'FEBI YANTO, M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '082306756191', 'L', 'Lengkap', 'default_male.jpg', 'y', 403),
-(41, '197710282003122004\r\n', 'DR. OKFALISA, S.T., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'y', 404),
-(42, '198203132009011009\r\n', 'BENNY SUKMA NEGARA, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 429),
-(43, '198010182007101002\r\n', 'MUHAMMAD FIKRY, S.T., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 430),
-(44, '198105232007102003\r\n', 'DR. ELIN HAERANI, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'y', 456),
-(45, '130517107\r\n', 'PIZAINI, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 457),
-(46, '130517104\r\n', 'LOLA OKTAVIA, S.ST., M.T.I', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'y', 481),
-(47, '198606292015032007\r\n', 'ELVIA BUDIANITA, S.T., M.CS.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'y', 482),
-(48, '197102152000031002\r\n', 'JASRIL, S.SI., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 506),
-(49, '197103132007011023\r\n', 'DR. SYARIFUDDIN, S.AG. M.A.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 507),
-(50, '130517045', 'SITI RAMADHANI, S.PD., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'y', 532),
-(51, '130517100', 'NAZRUDDIN SAFAAT, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 533),
-(52, '130517105', 'SISKA KURNIA GUSTI, S.T., M.SC.', 'Palembang', '1982-11-03', 'Pekanbaru', '082178811242', 'P', 'Lengkap', 'default_female.png', 'y', 558),
-(53, '198908142020122012\r\n', 'EKA PANDU CYNTHIA, S.T., M.KOM.', 'Pekanbaru', '1989-08-14', 'Pekanbaru', '081371674646', 'P', 'Lengkap', 'default_female.png', 'y', 559),
-(54, '197410162000032002', 'DR. FITRI WULANDARI, S.SI., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '082172341660', 'P', 'Lengkap', 'default_female.png', 'y', 588),
-(55, '198111252007102004', 'NOVI YANTI, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'y', 589),
-(56, '130517102', 'FADHILAH SYAFRIA, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '85271715204', 'P', 'Lengkap', 'default_female.png', 'y', 612),
-(57, '198804262019032009', 'IIS AFRIANTY, S.T., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'y', 613),
-(58, '130517099', 'DR. RAHMAD KURNIAWAN, ST., MIT.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 635),
-(59, '19860505215031006', 'RESKI MAI CANDRA, S.T., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 636),
-(60, '198212162015031003', 'IWAN ISKANDAR, M.T.', 'Pekanbaru', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', '25661632843053default_male.jpg', 'y', 664),
-(61, '130510024', 'FITRI INSANI, S.T., M.KOM.', 'Pekanbaru', '2020-08-04', 'Pekanbaru', '081364339920', 'L', 'Lengkap', '195681632842785default_female.png', 'y', 665),
-(62, '197408072009011007', 'DR. ALWIS NAZIR, M.KOM.', 'Pekanbaru', '2001-06-14', 'Pekanbaru', '082170724755', 'L', 'Lengkap', '98661632842416default_male.jpg', 'y', 698),
-(63, '198410122015031003', 'Oktaf brillian Kharisma, ST., MT', 'Pekanbaru', '2001-06-14', 'Pekanbaru', '082170724755', 'L', 'Lengkap', 'default_male.jpg', 'y', 703),
-(64, '197810122003122004', 'Dr. Liliana, S. T., M. Eng', 'Pekanbaru', '2020-08-04', 'Pekanbaru', '081364339920', 'L', 'Lengkap', 'default_male.jpg', 'y', 704),
-(65, '197707312007102003', 'Rika Susanti, ST., M.Eng', 'Pekanbaru', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'y', 705),
-(66, '198506182015031003', 'Aulia Ullah, ST., M.Eng', 'Palembang', '2020-08-04', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 706),
-(67, '197801262007101001', 'Dr. Alex wenda, ST., M.Eng', 'Pekanbaru', '2020-08-05', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 707),
-(68, '130517094', 'Abdillah, S.Si., MIT', 'Pekanbaru', '2020-08-06', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 708),
-(69, '130517054', 'Marhama Jelita, S.Pd., M.Sc', 'Pekanbaru', '2020-08-07', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 709),
-(70, '198511152015031003', 'Mulyono, ST., MT', 'Pekanbaru', '2020-08-08', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 710),
-(71, '197509222009122002', 'Ewi Ismaredah,S.Kom.,M.Kom', 'Pekanbaru', '2020-08-09', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 711),
+(29, '130517106\r\n', 'RAHMAD ABDILLAH, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 272),
+(30, '198111132007102003\r\n', 'LESTARI HANDAYANI, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'n', 288),
+(31, '13210200', 'YUSRA, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'n', 289),
+(32, '197403192008012015\r\n', 'YELFI VITRIANI, S.KOM., M.M.SI.', 'Palembang', '1978-03-14', 'Pekanbaru', '081368228044', 'P', 'Lengkap', 'default_female.png', 'n', 312),
+(33, '198705242015031006\r\n', 'TEDDIE DARMIZAL, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 313),
+(34, '130517103\r\n', 'SUWANTO SANJAYA, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 334),
+(35, '197608302011011003\r\n', 'SURYA AGUSTIAN, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 335),
+(36, '197711282007101003\r\n', 'NOVRIYANTO, S.T., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 358),
+(37, '197805082007101007\r\n', 'MUHAMMAD IRSYAD, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 359),
+(39, '198108142006042002\r\n', 'FITRA KURNIA, S.KOM., M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'n', 380),
+(40, '198102062009121003\r\n', 'FEBI YANTO, M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '082306756191', 'L', 'Lengkap', 'default_male.jpg', 'n', 403),
+(41, '197710282003122004\r\n', 'DR. OKFALISA, S.T., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'n', 404),
+(42, '198203132009011009\r\n', 'BENNY SUKMA NEGARA, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 429),
+(43, '198010182007101002\r\n', 'MUHAMMAD FIKRY, S.T., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 430),
+(44, '198105232007102003\r\n', 'DR. ELIN HAERANI, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'n', 456),
+(45, '130517107\r\n', 'PIZAINI, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 457),
+(46, '130517104\r\n', 'LOLA OKTAVIA, S.ST., M.T.I', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'n', 481),
+(47, '198606292015032007\r\n', 'ELVIA BUDIANITA, S.T., M.CS.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'n', 482),
+(48, '197102152000031002\r\n', 'JASRIL, S.SI., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 506),
+(49, '197103132007011023\r\n', 'DR. SYARIFUDDIN, S.AG. M.A.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 507),
+(50, '130517045', 'SITI RAMADHANI, S.PD., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'n', 532),
+(51, '130517100', 'NAZRUDDIN SAFAAT, M.T.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 533),
+(52, '130517105', 'SISKA KURNIA GUSTI, S.T., M.SC.', 'Palembang', '1982-11-03', 'Pekanbaru', '082178811242', 'P', 'Lengkap', 'default_female.png', 'n', 558),
+(53, '198908142020122012\r\n', 'EKA PANDU CYNTHIA, S.T., M.KOM.', 'Pekanbaru', '1989-08-14', 'Pekanbaru', '081371674646', 'P', 'Lengkap', 'default_female.png', 'n', 559),
+(54, '197410162000032002', 'DR. FITRI WULANDARI, S.SI., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '082172341660', 'P', 'Lengkap', 'default_female.png', 'n', 588),
+(55, '198111252007102004', 'NOVI YANTI, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'n', 589),
+(56, '130517102', 'FADHILAH SYAFRIA, S.T., M.KOM.', 'Palembang', '2020-08-04', 'Pekanbaru', '85271715204', 'P', 'Lengkap', 'default_female.png', 'n', 612),
+(57, '198804262019032009', 'IIS AFRIANTY, S.T., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'P', 'Lengkap', 'default_female.png', 'n', 613),
+(58, '130517099', 'DR. RAHMAD KURNIAWAN, ST., MIT.', 'Palembang', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 635),
+(59, '19860505215031006', 'RESKI MAI CANDRA, S.T., M.SC.', 'Palembang', '2020-08-04', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 636),
+(60, '198212162015031003', 'IWAN ISKANDAR, M.T.', 'Pekanbaru', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', '25661632843053default_male.jpg', 'n', 664),
+(61, '130510024', 'FITRI INSANI, S.T., M.KOM.', 'Pekanbaru', '2020-08-04', 'Pekanbaru', '081364339920', 'L', 'Lengkap', '195681632842785default_female.png', 'n', 665),
+(62, '197408072009011007', 'DR. ALWIS NAZIR, M.KOM.', 'Pekanbaru', '2001-06-14', 'Pekanbaru', '082170724755', 'L', 'Lengkap', '98661632842416default_male.jpg', 'n', 698),
+(63, '198410122015031003', 'Oktaf brillian Kharisma, ST., MT', 'Pekanbaru', '2001-06-14', 'Pekanbaru', '082170724755', 'L', 'Lengkap', 'default_male.jpg', 'n', 703),
+(64, '197810122003122004', 'Dr. Liliana, S. T., M. Eng', 'Pekanbaru', '2020-08-04', 'Pekanbaru', '081364339920', 'L', 'Lengkap', 'default_male.jpg', 'n', 704),
+(65, '197707312007102003', 'Rika Susanti, ST., M.Eng', 'Pekanbaru', '2020-08-04', 'Pekanbaru', '081234567890', 'L', 'Lengkap', 'default_male.jpg', 'n', 705),
+(66, '198506182015031003', 'Aulia Ullah, ST., M.Eng', 'Palembang', '2020-08-04', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 706),
+(67, '197801262007101001', 'Dr. Alex wenda, ST., M.Eng', 'Pekanbaru', '2020-08-05', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 707),
+(68, '130517094', 'Abdillah, S.Si., MIT', 'Pekanbaru', '2020-08-06', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 708),
+(69, '130517054', 'Marhama Jelita, S.Pd., M.Sc', 'Pekanbaru', '2020-08-07', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 709),
+(70, '198511152015031003', 'Mulyono, ST., MT', 'Pekanbaru', '2020-08-08', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 710),
+(71, '197509222009122002', 'Ewi Ismaredah,S.Kom.,M.Kom', 'Pekanbaru', '2020-08-09', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 711),
 (72, '130517053', 'Halim Mudia, S.T.,M.T', 'Pekanbaru', '2020-08-10', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 712),
-(73, '199305012020121016', 'M. Imam Arifandy, S.KPm., M.Si', 'Pekanbaru', '2020-08-11', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 713),
-(74, '130514010', 'Nanda Putri Miefthawati, B.Sc, M.Sc', 'Pekanbaru', '2020-08-12', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 714),
-(75, '197410302007011011', 'Dr. Teddy Purnamirza, ST, M.Eng', 'Pekanbaru', '2020-08-13', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 715),
-(76, '19830625 200801 1 008', 'DR. Harris Simaremare, ST., MT.', 'Pekanbaru', '2020-08-14', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 716),
-(77, '19850829 201503 1 002', 'Agus Firdaus Chandra, Lc., M.A.', 'Pekanbaru', '2020-08-15', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 717),
-(78, '19880630 201503 1 006', 'Ahmad Faizal, ST., MT.', 'Pekanbaru', '2020-08-16', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 718),
-(79, '19721021 200604 2 001', 'DR. Zulfatri Aini, ST., MT.', 'Pekanbaru', '2020-08-17', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 719),
-(80, '19770909 201101 1 005', 'Hasdi Radiles, ST., MT.', 'Pekanbaru', '2020-08-18', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 720),
-(81, '19740719 200604 1 001', 'Jufrizel, MT.', 'Pekanbaru', '2020-08-19', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 721),
-(82, '19760724 200710 1 003', 'Kunaifi, ST., Pg.Dip.Enst., M.Sc.', 'Pekanbaru', '2020-08-20', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 722),
-(83, '19790629 200604 2 001', 'Melfa Yola, ST., M.Eng.', 'Pekanbaru', '2020-08-21', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 723),
-(84, '19770803 201101 2 002', 'Novi Gusnita, ST., MT.', 'Pekanbaru', '2020-08-22', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 724),
-(85, '19841202 201903 1 004', 'Sutoyo, MT.', 'Pekanbaru', '2020-08-23', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 725),
-(86, '130517095', 'Putut Son Maria, S.ST., MT.', 'Pekanbaru', '2020-08-05', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 726),
-(87, '197708312009122002', 'Fitri Amilia, ST., MT.', 'Pekanbaru', '2020-08-06', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 727),
-(88, '197902232008011009', 'Edmond Febrinicko Armay, S.Si., MT.', 'Pekanbaru', '2020-08-07', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 728),
-(89, '198709062015032006', 'Dian Mursyitah, ST., MT.', 'Pekanbaru', '2020-08-08', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 729),
+(73, '199305012020121016', 'M. Imam Arifandy, S.KPm., M.Si', 'Pekanbaru', '2020-08-11', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 713),
+(74, '130514010', 'Nanda Putri Miefthawati, B.Sc, M.Sc', 'Pekanbaru', '2020-08-12', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 714),
+(75, '197410302007011011', 'Dr. Teddy Purnamirza, ST, M.Eng', 'Pekanbaru', '2020-08-13', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 715),
+(76, '198306252008011008', 'DR. Harris Simaremare, ST., MT.', 'Pekanbaru', '2020-08-14', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 716),
+(77, '198508292015031002', 'Agus Firdaus Chandra, Lc., M.A.', 'Pekanbaru', '2020-08-15', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 717),
+(78, '198806302015031006', 'Ahmad Faizal, ST., MT.', 'Pekanbaru', '2020-08-16', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 718),
+(79, '197210212006042001', 'DR. Zulfatri Aini, ST., MT.', 'Pekanbaru', '2020-08-17', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 719),
+(80, '197709092011011005', 'Hasdi Radiles, ST., MT.', 'Pekanbaru', '2020-08-18', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 720),
+(81, '197407192006041001', 'Jufrizel, MT.', 'Pekanbaru', '2020-08-19', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 721),
+(82, '197607242007101003', 'Kunaifi, ST., Pg.Dip.Enst., M.Sc.', 'Pekanbaru', '2020-08-20', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 722),
+(83, '197906292006042001', 'Melfa Yola, ST., M.Eng.', 'Pekanbaru', '2020-08-21', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 723),
+(84, '197708032011012002', 'Novi Gusnita, ST., MT.', 'Pekanbaru', '2020-08-22', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 724),
+(85, '198412022019031004', 'Sutoyo, MT.', 'Pekanbaru', '2020-08-23', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 725),
+(86, '130517095', 'Putut Son Maria, S.ST., MT.', 'Pekanbaru', '2020-08-05', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 726),
+(87, '197708312009122002', 'Fitri Amilia, ST., MT.', 'Pekanbaru', '2020-08-06', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 727),
+(88, '197902232008011009', 'Edmond Febrinicko Armay, S.Si., MT.', 'Pekanbaru', '2020-08-07', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 728),
+(89, '198709062015032006', 'Dian Mursyitah, ST., MT.', 'Pekanbaru', '2020-08-08', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 729),
 (90, '130517049', 'Elfira Safitri, M.Mat', 'Pekanbaru', '2020-08-05', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 730),
 (91, '198611032018011001', 'Zukrianto, M.Si', 'Pekanbaru', '2020-08-06', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 731),
 (92, '199212072020121011', 'Sarbaini, M.Si', 'Pekanbaru', '2020-08-07', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 732),
 (93, '130517091', 'Irma Suryani, M.Sc', 'Pekanbaru', '2020-08-08', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 733),
-(94, '198408032011011005', 'Nilwan Andiraja, M. Sc', 'Pekanbaru', '2020-08-09', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 734),
+(94, '198408032011011005', 'Nilwan Andiraja, M. Sc', 'Pekanbaru', '2020-08-09', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 734),
 (95, '198406182015032001', 'Rahmadeni, M. Si', 'Pekanbaru', '2020-08-10', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 735),
 (96, '197701032007102001', 'Dr. Yuslenita Muda, M.Sc', 'Pekanbaru', '2020-08-11', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 736),
 (97, '197902162007102001', 'Sri Basriati, M.Sc', 'Pekanbaru', '2020-08-12', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 737),
@@ -174,8 +351,8 @@ INSERT INTO `guru` (`id_guru`, `nomor_induk`, `nama`, `tempat_lahir`, `tanggal_l
 (100, '197512312009011052', 'Mohammad Soleh, M.Sc.', 'Pekanbaru', '2020-08-15', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 740),
 (101, '130517048', 'Ade Novia Rahma, S.Pd.,M.Mat', 'Pekanbaru', '2020-08-16', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 741),
 (102, '130517046', 'Rahmawati, S.Si., M.Sc', 'Pekanbaru', '2020-08-17', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 742),
-(103, '130517090', 'Aprijon, M.Sc.', 'Pekanbaru', '2020-08-18', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 743),
-(104, '197308182006041003', 'Wartono, M.Sc', 'Pekanbaru', '2020-08-19', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 744),
+(103, '130517090', 'Aprijon, M.Sc.', 'Pekanbaru', '2020-08-18', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 743),
+(104, '197308182006041003', 'Wartono, M.Sc', 'Pekanbaru', '2020-08-19', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 744),
 (105, '197709132006042002', 'Fitri Aryani, S.Si., M.Sc.', 'Pekanbaru', '2020-08-20', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 745),
 (106, '197810252006041006', 'DR. Riswan Effendi, M.Sc.', 'Pekanbaru', '2020-08-21', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 746),
 (107, '19880320 2019031006', 'M. Marizal, M.Sc.', 'Pekanbaru', '2020-08-22', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 747),
@@ -183,7 +360,7 @@ INSERT INTO `guru` (`id_guru`, `nomor_induk`, `nama`, `tempat_lahir`, `tanggal_l
 (109, '130508038', 'Megawati, S.Kom, M.T', 'Pekanbaru', '2020-08-06', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 749),
 (110, '197608282009011011', 'Arif Marsal Lc.,  M. A.', 'Pekanbaru', '2020-08-07', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 750),
 (111, '130517093', 'T. Khairil Ahsyar, S.Kom., M.Kom', 'Pekanbaru', '2020-08-08', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 751),
-(112, '198307162011011008', 'Eki Saputra, S.Kom, M.Kom', 'Pekanbaru', '2020-08-09', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 752),
+(112, '198307162011011008', 'Eki Saputra, S.Kom, M.Kom', 'Pekanbaru', '2020-08-09', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 752),
 (113, '130511023', 'Mustakim, ST., M.Kom.', 'Pekanbaru', '2020-08-10', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 753),
 (114, '197109052007012013', 'Zarnelly, S.Kom, M.Sc', 'Pekanbaru', '2020-08-11', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 754),
 (115, '130517052', 'M. Afdal, ST., M.Kom', 'Pekanbaru', '2020-08-12', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 755),
@@ -198,7 +375,7 @@ INSERT INTO `guru` (`id_guru`, `nomor_induk`, `nama`, `tempat_lahir`, `tanggal_l
 (124, '199001242019031017', 'Muhammad Luthfi Hamzah, B.IT., M.Kom.', 'Pekanbaru', '2020-08-21', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 764),
 (125, '197104072000031001', 'Nesdi Evrilyan Rozanda, S.Kom., M.Sc .', 'Pekanbaru', '2020-08-22', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 765),
 (126, '197305292001122002', 'Nurmaini D. S.Kom., M.Kes.', 'Pekanbaru', '2020-08-23', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 766),
-(127, '198502142015032004', 'Siti Monalisa, ST., M.Kom.', 'Pekanbaru', '2020-08-24', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 767),
+(127, '198502142015032004', 'Siti Monalisa, ST., M.Kom.', 'Pekanbaru', '2020-08-24', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 767),
 (128, '198012152009121002', 'Syaifullah, SE, M.Sc.', 'Pekanbaru', '2020-08-25', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 768),
 (129, '197411292009011002', 'Anofrizen, S.Kom., M.Kom.', 'Pekanbaru', '2020-08-26', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 769),
 (130, '198606122020122014', 'Fitriani Muttakin, S.Kom., M.Cs.', 'Pekanbaru', '2020-08-27', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 770),
@@ -213,21 +390,24 @@ INSERT INTO `guru` (`id_guru`, `nomor_induk`, `nama`, `tempat_lahir`, `tanggal_l
 (139, '197304122007101002', 'Ismu Kusumanto, ST., MT.', 'Pekanbaru', '2020-08-14', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 779),
 (140, '197911102003122012', 'Merry Siska, ST, MT', 'Pekanbaru', '2020-08-15', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 780),
 (141, '198610212018012001', 'Silvia, M.Si', 'Pekanbaru', '2020-08-16', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 781),
-(142, '198205272015032002', 'Misra Hartati, ST., MT', 'Pekanbaru', '2020-08-17', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 782),
+(142, '198205272015032002', 'Misra Hartati, ST., MT', 'Pekanbaru', '2020-08-17', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 782),
 (143, '130517096', 'Muhammad Ihsan Hamdy, MT', 'Pekanbaru', '2020-08-18', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 783),
 (144, '199012222019032015', 'Fitriani Surayya Lubis, S.T., M.Sc', 'Pekanbaru', '2020-08-19', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 784),
 (145, '130512062', 'Dewi Diniaty', 'Pekanbaru', '2020-08-20', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 785),
-(146, '198506162011011016', 'Fitra Lestari, S.T., M.Eng., Ph.D.', 'Pekanbaru', '2020-08-21', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'y', 786),
+(146, '198506162011011016', 'Fitra Lestari, S.T., M.Eng., Ph.D.', 'Pekanbaru', '2020-08-21', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 786),
 (147, '197507232007011018', 'Dr. Petir Papilo, ST, MSc', 'Pekanbaru', '2020-08-22', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 787),
 (148, '197711282007012022', 'Nofirza, ST., M.Sc', 'Pekanbaru', '2020-08-23', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 788),
 (149, '198205302015031001', 'Harpito, ST., MT', 'Pekanbaru', '2020-08-24', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 789),
 (150, '130514005', 'Dr. Rika, M.Sc', 'Pekanbaru', '2020-08-25', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 790),
-(151, '198707082019031014', 'Muhammad Rizki, MT., MBA', 'Pekanbaru', '2020-08-26', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 791);
+(151, '198707082019031014', 'Muhammad Rizki, MT., MBA', 'Pekanbaru', '2020-08-26', 'Pekanbaru', '082133275257', 'L', 'Lengkap', 'default_male.jpg', 'n', 791),
+(152, '198210272015031001', 'Anwardi, M.T.', 'Pekanbaru', '2000-01-25', 'Pekanbaru', '082175247272', 'L', 'Lengkap', '241171634709189default_male.jpg', '', 6035),
+(153, '130517050', 'Saide, M.Kom., M.I.M.', 'Pekanbaru', '2000-01-25', 'Pekanbaru', '082175247272', 'L', 'Lengkap', '702441634735786default_male.jpg', '', 6036),
+(155, '198612062015031004', 'MUHAMMAD AFFANDES, M.T.', 'Pekanbaru', '1981-12-25', 'Pekanbaru', '0812345678910', 'L', 'Lengkap', '974981634931179default_male.jpg', '', 6041);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -236,7 +416,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama`) VALUES
@@ -253,7 +433,7 @@ INSERT INTO `kategori` (`id_kategori`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori_ttq`
+-- Struktur dari tabel `kategori_ttq`
 --
 
 CREATE TABLE `kategori_ttq` (
@@ -262,7 +442,7 @@ CREATE TABLE `kategori_ttq` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategori_ttq`
+-- Dumping data untuk tabel `kategori_ttq`
 --
 
 INSERT INTO `kategori_ttq` (`id_kategori_ttq`, `nama`) VALUES
@@ -273,7 +453,7 @@ INSERT INTO `kategori_ttq` (`id_kategori_ttq`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas`
+-- Struktur dari tabel `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -283,7 +463,7 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kelas`
+-- Dumping data untuk tabel `kelas`
 --
 
 INSERT INTO `kelas` (`id_kelas`, `tingkat`, `nama`) VALUES
@@ -295,12 +475,94 @@ INSERT INTO `kelas` (`id_kelas`, `tingkat`, `nama`) VALUES
 (38, 'TIF', 'Teknik Informatika - RES'),
 (39, 'SI', 'Sistem Informasi - MON'),
 (40, 'MT', 'Matematika - NIL'),
-(41, 'TE', 'Teknik Elektro - TOY');
+(41, 'TE', 'Teknik Elektro - STY'),
+(42, 'TE', 'Teknik Elektro - HLM'),
+(43, 'TE', 'Teknik Elektro - IMM'),
+(44, 'MT', 'Matematika - BEN'),
+(45, 'SI', 'Sistem Informasi - FIT'),
+(46, 'TI', 'Teknik Industri - NZR'),
+(47, 'TI', 'Teknik Industri - RIZ'),
+(48, 'TI', 'Teknik Industri - ISN'),
+(49, 'SI', 'Sistem Informasi - LTF'),
+(50, 'TI', 'Teknik Industri - ANW'),
+(51, 'TI', 'Teknik Industri - FTL'),
+(53, 'TI', 'Teknik Industri - PIL'),
+(54, 'TE', 'Teknik Elektro - KUN'),
+(55, 'TIF', 'Teknik Informatika - ELN'),
+(56, 'TIF', 'Teknik Informatika - OKF'),
+(57, 'TIF', 'Teknik Informatika - RMD'),
+(58, 'TIF', 'Teknik Informatika - EKA'),
+(59, 'TIF', 'Teknik Informatika - ELV'),
+(60, 'TIF', 'Teknik Informatika - FDL'),
+(61, 'TIF', 'Teknik Informatika - FBI'),
+(62, 'TIF', 'Teknik Informatika - NIA'),
+(63, 'TIF', 'Teknik Informatika - IIN'),
+(64, 'TIF', 'Teknik Informatika - FIT'),
+(65, 'TIF', 'Teknik Informatika - IIS'),
+(66, 'TIF', 'Teknik Informatika - JAY'),
+(67, 'TIF', 'Teknik Informatika - LOL'),
+(68, 'TIF', 'Teknik Informatika - TAR'),
+(69, 'TIF', 'Teknik Informatika - FIK'),
+(70, 'TIF', 'Teknik Informatika - IRS'),
+(71, 'TIF', 'Teknik Informatika - SAF'),
+(72, 'TIF', 'Teknik Informatika - NOV'),
+(73, 'TIF', 'Teknik Informatika - PZN'),
+(74, 'TIF', 'Teknik Informatika - RAB'),
+(75, 'TIF', 'Teknik Informatika - SIS'),
+(76, 'TIF', 'Teknik Informatika - STR'),
+(77, 'TIF', 'Teknik Informatika - SUR'),
+(78, 'TIF', 'Teknik Informatika - SUW'),
+(79, 'TIF', 'Teknik Informatika - SRF'),
+(80, 'TIF', 'Teknik Informatika - TED'),
+(81, 'TIF', 'Teknik Informatika - YLV'),
+(82, 'TIF', 'Teknik Informatika - YUS'),
+(83, 'TIF', 'Teknik Informatika - ALW'),
+(84, 'TIF', 'Teknik Informatika - NVY'),
+(85, 'TIF', 'Teknik Informatika - BSN'),
+(86, 'MT', 'Matematika - COR'),
+(87, 'MT', 'Matematika - ADE'),
+(88, 'MT', 'Matematika - APR'),
+(89, 'MT', 'Matematika - ARI'),
+(90, 'MT', 'Matematika - RDO'),
+(91, 'MT', 'Matematika - RSW'),
+(92, 'MT', 'Matematika - YSL'),
+(93, 'MT', 'Matematika - ELF'),
+(94, 'MT', 'Matematika - FIT'),
+(95, 'MT', 'Matematika - IRM'),
+(96, 'MT', 'Matematika - SOL'),
+(97, 'MT', 'Matematika - MRZ'),
+(98, 'MT', 'Matematika - RMD'),
+(99, 'MT', 'Matematika - RHM'),
+(100, 'MT', 'Matematika - SRI'),
+(101, 'MT', 'Matematika - ZUK'),
+(102, 'SI', 'Sistem Informasi - TGK'),
+(103, 'SI', 'Sistem Informasi - ANI'),
+(104, 'SI', 'Sistem Informasi - ANF'),
+(105, 'SI', 'Sistem Informasi - ARF'),
+(106, 'SI', 'Sistem Informasi - RCE'),
+(107, 'SI', 'Sistem Informasi - FBI'),
+(108, 'SI', 'Sistem Informasi - IDR'),
+(109, 'SI', 'Sistem Informasi - GIH'),
+(110, 'SI', 'Sistem Informasi - AFD'),
+(111, 'SI', 'Sistem Informasi - MED'),
+(112, 'SI', 'Sistem Informasi - MEG'),
+(113, 'SI', 'Sistem Informasi - JAZ'),
+(114, 'SI', 'Sistem Informasi - MUS'),
+(115, 'SI', 'Sistem Informasi - NES'),
+(116, 'SI', 'Sistem Informasi - NUR'),
+(117, 'SI', 'Sistem Informasi - SYF'),
+(118, 'SI', 'Sistem Informasi - SFR'),
+(119, 'SI', 'Sistem Informasi - ZAR'),
+(120, 'SI', 'Sistem Informasi - SDE'),
+(121, 'TE', 'Teknik Elektro - EDM'),
+(123, 'TI', 'Teknik Industri - HRP'),
+(124, 'TE', 'Teknik Elektro - AUL'),
+(125, 'TIF', 'Teknik Informatika - AFF');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas_detail`
+-- Struktur dari tabel `kelas_detail`
 --
 
 CREATE TABLE `kelas_detail` (
@@ -310,7 +572,7 @@ CREATE TABLE `kelas_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kelas_detail`
+-- Dumping data untuk tabel `kelas_detail`
 --
 
 INSERT INTO `kelas_detail` (`id_kelas_detail`, `kelas_id`, `guru_id`) VALUES
@@ -322,12 +584,94 @@ INSERT INTO `kelas_detail` (`id_kelas_detail`, `kelas_id`, `guru_id`) VALUES
 (88, 38, 59),
 (89, 39, 127),
 (90, 40, 94),
-(91, 41, 85);
+(91, 41, 85),
+(92, 42, 72),
+(93, 43, 73),
+(94, 44, 92),
+(95, 45, 130),
+(96, 46, 135),
+(97, 47, 151),
+(98, 48, 138),
+(99, 49, 124),
+(100, 50, 152),
+(101, 51, 146),
+(102, 53, 147),
+(103, 54, 82),
+(104, 55, 44),
+(105, 56, 41),
+(106, 57, 58),
+(107, 58, 53),
+(108, 59, 47),
+(109, 60, 56),
+(110, 61, 40),
+(111, 62, 39),
+(112, 63, 61),
+(113, 64, 54),
+(114, 65, 57),
+(115, 66, 48),
+(116, 67, 46),
+(117, 68, 30),
+(118, 69, 43),
+(119, 70, 37),
+(120, 71, 51),
+(121, 72, 36),
+(122, 73, 45),
+(123, 74, 29),
+(124, 75, 52),
+(125, 76, 50),
+(126, 77, 35),
+(127, 78, 34),
+(128, 79, 49),
+(129, 80, 33),
+(130, 81, 32),
+(131, 82, 31),
+(132, 83, 62),
+(133, 84, 55),
+(134, 85, 42),
+(135, 86, 99),
+(136, 87, 101),
+(137, 88, 103),
+(138, 89, 98),
+(139, 90, 108),
+(140, 91, 106),
+(141, 92, 96),
+(142, 93, 90),
+(143, 94, 105),
+(144, 95, 93),
+(145, 96, 100),
+(146, 97, 107),
+(147, 98, 95),
+(148, 99, 102),
+(149, 100, 97),
+(150, 101, 91),
+(152, 102, 111),
+(153, 103, 118),
+(154, 104, 129),
+(155, 105, 110),
+(156, 106, 117),
+(157, 107, 119),
+(158, 108, 116),
+(159, 109, 121),
+(160, 110, 115),
+(161, 111, 122),
+(162, 112, 109),
+(163, 113, 123),
+(164, 114, 113),
+(165, 115, 125),
+(166, 116, 126),
+(167, 117, 128),
+(168, 118, 120),
+(169, 119, 114),
+(170, 120, 153),
+(171, 121, 88),
+(173, 123, 149),
+(174, 124, 66),
+(175, 125, 155);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas_siswa`
+-- Struktur dari tabel `kelas_siswa`
 --
 
 CREATE TABLE `kelas_siswa` (
@@ -337,7 +681,7 @@ CREATE TABLE `kelas_siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kelas_siswa`
+-- Dumping data untuk tabel `kelas_siswa`
 --
 
 INSERT INTO `kelas_siswa` (`id_kelas_siswa`, `kelas_id`, `tahun_akademik_id`) VALUES
@@ -349,12 +693,20 @@ INSERT INTO `kelas_siswa` (`id_kelas_siswa`, `kelas_id`, `tahun_akademik_id`) VA
 (39, 38, 1),
 (40, 40, 1),
 (41, 39, 1),
-(42, 41, 1);
+(42, 41, 1),
+(43, 51, 1),
+(44, 54, 1),
+(45, 53, 1),
+(46, 50, 1),
+(47, 86, 1),
+(49, 123, 1),
+(50, 124, 1),
+(51, 125, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu_management`
+-- Struktur dari tabel `menu_management`
 --
 
 CREATE TABLE `menu_management` (
@@ -366,13 +718,13 @@ CREATE TABLE `menu_management` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `menu_management`
+-- Dumping data untuk tabel `menu_management`
 --
 
 INSERT INTO `menu_management` (`id_menu_management`, `icon`, `nama`, `link`, `urut`) VALUES
 (1, '', 'Tahun Akademik', 'Admin/TahunAkademik', 9),
-(2, '', 'Kelas Siswa', 'Admin/KelasSiswa', 11),
-(3, '', 'Kelas', 'Admin/Kelas', 10),
+(2, '', 'Kelas Per Akademik', 'Admin/KelasSiswa', 11),
+(3, '', 'Kelas Dosen', 'Admin/Kelas', 10),
 (4, 'fas fa-table', 'Management Menu', 'Admin/Menu', 4),
 (5, '', 'Admin', 'Admin/Admin', 6),
 (6, '', 'Guru', 'Admin/Guru', 7),
@@ -390,13 +742,13 @@ INSERT INTO `menu_management` (`id_menu_management`, `icon`, `nama`, `link`, `ur
 (18, '', 'Sub Kategori', 'Admin/SubKategori', 22),
 (19, '', 'Amalan Yaumiyah', 'Admin/Yaumiyah', 23),
 (20, '', 'Kategori Tahfidz', 'Admin/KategoriTtq', 13),
-(21, '', 'Siswa Kelas', 'Admin/SiswaKelas', 15),
+(21, '', 'Kelas Mahasiswa', 'Admin/SiswaKelas', 15),
 (23, 'fas fa-cogs', 'Yaumiyah Roles', 'Admin/RolesYaumiyah', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Struktur dari tabel `roles`
 --
 
 CREATE TABLE `roles` (
@@ -405,7 +757,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `roles`
+-- Dumping data untuk tabel `roles`
 --
 
 INSERT INTO `roles` (`id_roles`, `nama`) VALUES
@@ -416,7 +768,7 @@ INSERT INTO `roles` (`id_roles`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles_yaumiyah`
+-- Struktur dari tabel `roles_yaumiyah`
 --
 
 CREATE TABLE `roles_yaumiyah` (
@@ -425,10 +777,34 @@ CREATE TABLE `roles_yaumiyah` (
   `kelas_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `roles_yaumiyah`
+--
+
+INSERT INTO `roles_yaumiyah` (`id_roles_yaumiyah`, `users_id`, `kelas_id`) VALUES
+(7, 127, 41),
+(8, 112, 36),
+(9, 94, 40),
+(10, 146, 43),
+(11, 147, 45),
+(12, 82, 44),
+(13, 104, 35),
+(14, 142, 38),
+(15, 79, 37),
+(16, 60, 34),
+(17, 152, 46),
+(18, 85, 42),
+(19, 59, 39),
+(20, 99, 47),
+(21, 149, 49),
+(22, 66, 50),
+(23, 66, 124),
+(25, 155, 125);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles_yaumiyah_detail`
+-- Struktur dari tabel `roles_yaumiyah_detail`
 --
 
 CREATE TABLE `roles_yaumiyah_detail` (
@@ -437,10 +813,178 @@ CREATE TABLE `roles_yaumiyah_detail` (
   `kategori_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `roles_yaumiyah_detail`
+--
+
+INSERT INTO `roles_yaumiyah_detail` (`id_roles_yaumiyah_detail`, `roles_yaumiyah_id`, `kategori_id`) VALUES
+(98, 10, 1),
+(99, 10, 2),
+(100, 10, 3),
+(101, 10, 4),
+(102, 10, 5),
+(103, 10, 6),
+(104, 10, 7),
+(105, 10, 8),
+(106, 10, 9),
+(107, 11, 1),
+(108, 11, 2),
+(109, 11, 3),
+(110, 11, 4),
+(111, 11, 5),
+(112, 11, 6),
+(113, 11, 7),
+(114, 11, 8),
+(115, 11, 9),
+(116, 12, 1),
+(117, 12, 2),
+(118, 12, 3),
+(119, 12, 4),
+(120, 12, 5),
+(121, 12, 6),
+(122, 12, 7),
+(123, 12, 8),
+(124, 12, 9),
+(125, 13, 1),
+(126, 13, 2),
+(127, 13, 3),
+(128, 13, 4),
+(129, 13, 5),
+(130, 13, 6),
+(131, 13, 7),
+(132, 13, 8),
+(133, 13, 9),
+(134, 14, 1),
+(135, 14, 2),
+(136, 14, 3),
+(137, 14, 4),
+(138, 14, 5),
+(139, 14, 6),
+(140, 14, 7),
+(141, 14, 8),
+(142, 14, 9),
+(143, 15, 1),
+(144, 15, 2),
+(145, 15, 3),
+(146, 15, 4),
+(147, 15, 5),
+(148, 15, 6),
+(149, 15, 7),
+(150, 15, 8),
+(151, 15, 9),
+(152, 8, 1),
+(153, 8, 2),
+(154, 8, 3),
+(155, 8, 4),
+(156, 8, 5),
+(157, 8, 6),
+(158, 8, 7),
+(159, 8, 8),
+(160, 8, 9),
+(161, 16, 1),
+(162, 16, 2),
+(163, 16, 3),
+(164, 16, 4),
+(165, 16, 5),
+(166, 16, 6),
+(167, 16, 7),
+(168, 16, 8),
+(169, 16, 9),
+(170, 9, 1),
+(171, 9, 2),
+(172, 9, 3),
+(173, 9, 4),
+(174, 9, 5),
+(175, 9, 6),
+(176, 9, 7),
+(177, 9, 8),
+(178, 9, 9),
+(179, 17, 1),
+(180, 17, 2),
+(181, 17, 3),
+(182, 17, 4),
+(183, 17, 5),
+(184, 17, 6),
+(185, 17, 7),
+(186, 17, 8),
+(187, 17, 9),
+(188, 18, 1),
+(189, 18, 2),
+(190, 18, 3),
+(191, 18, 4),
+(192, 18, 5),
+(193, 18, 6),
+(194, 18, 7),
+(195, 18, 8),
+(196, 18, 9),
+(197, 7, 1),
+(198, 7, 2),
+(199, 7, 3),
+(200, 7, 4),
+(201, 7, 5),
+(202, 7, 6),
+(203, 7, 7),
+(204, 7, 8),
+(205, 7, 9),
+(215, 19, 1),
+(216, 19, 2),
+(217, 19, 3),
+(218, 19, 4),
+(219, 19, 5),
+(220, 19, 6),
+(221, 19, 7),
+(222, 19, 8),
+(223, 19, 9),
+(224, 20, 1),
+(225, 20, 2),
+(226, 20, 3),
+(227, 20, 4),
+(228, 20, 5),
+(229, 20, 6),
+(230, 20, 7),
+(231, 20, 8),
+(232, 20, 9),
+(233, 21, 1),
+(234, 21, 2),
+(235, 21, 3),
+(236, 21, 4),
+(237, 21, 5),
+(238, 21, 6),
+(239, 21, 7),
+(240, 21, 8),
+(241, 21, 9),
+(242, 22, 1),
+(243, 22, 2),
+(244, 22, 3),
+(245, 22, 4),
+(246, 22, 5),
+(247, 22, 6),
+(248, 22, 7),
+(249, 22, 8),
+(250, 22, 9),
+(260, 23, 1),
+(261, 23, 2),
+(262, 23, 3),
+(263, 23, 4),
+(264, 23, 5),
+(265, 23, 6),
+(266, 23, 7),
+(267, 23, 8),
+(268, 23, 9),
+(287, 25, 1),
+(288, 25, 2),
+(289, 25, 3),
+(290, 25, 4),
+(291, 25, 5),
+(292, 25, 6),
+(293, 25, 7),
+(294, 25, 8),
+(295, 25, 9);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `siswa`
+-- Struktur dari tabel `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -458,7 +1002,7 @@ CREATE TABLE `siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `siswa`
+-- Dumping data untuk tabel `siswa`
 --
 
 INSERT INTO `siswa` (`id_siswa`, `nomor_induk`, `nama`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `no_telephone`, `jenis_kelamin`, `keterangan`, `gambar`, `users_id`) VALUES
@@ -4101,7 +4645,7 @@ INSERT INTO `siswa` (`id_siswa`, `nomor_induk`, `nama`, `tempat_lahir`, `tanggal
 -- --------------------------------------------------------
 
 --
--- Table structure for table `siswa_kelas`
+-- Struktur dari tabel `siswa_kelas`
 --
 
 CREATE TABLE `siswa_kelas` (
@@ -4111,7 +4655,7 @@ CREATE TABLE `siswa_kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `siswa_kelas`
+-- Dumping data untuk tabel `siswa_kelas`
 --
 
 INSERT INTO `siswa_kelas` (`id_siswa_kelas`, `siswa_id`, `kelas_siswa_id`) VALUES
@@ -4314,12 +4858,343 @@ INSERT INTO `siswa_kelas` (`id_siswa_kelas`, `siswa_id`, `kelas_siswa_id`) VALUE
 (874, 4499, 41),
 (875, 4514, 41),
 (876, 4516, 41),
-(877, 4544, 41);
+(877, 4544, 41),
+(878, 5241, 43),
+(879, 5242, 43),
+(880, 5520, 43),
+(881, 5567, 43),
+(882, 5568, 43),
+(883, 5594, 43),
+(884, 5694, 43),
+(885, 5706, 43),
+(886, 5710, 43),
+(887, 5718, 43),
+(888, 5737, 43),
+(889, 5753, 43),
+(890, 5755, 43),
+(891, 5796, 43),
+(892, 5797, 43),
+(893, 5800, 43),
+(894, 5802, 43),
+(895, 5804, 43),
+(896, 5805, 43),
+(897, 5810, 43),
+(898, 5815, 43),
+(899, 5817, 43),
+(900, 5818, 43),
+(901, 5820, 43),
+(902, 5822, 43),
+(903, 5823, 43),
+(904, 5828, 43),
+(905, 5830, 43),
+(906, 5832, 43),
+(907, 5833, 43),
+(908, 5834, 43),
+(909, 4614, 44),
+(910, 4615, 44),
+(911, 4619, 44),
+(912, 4623, 44),
+(913, 4630, 44),
+(914, 4633, 44),
+(915, 4634, 44),
+(916, 4640, 44),
+(917, 4644, 44),
+(918, 4648, 44),
+(919, 4652, 44),
+(920, 4656, 44),
+(921, 4660, 44),
+(922, 4664, 44),
+(923, 4668, 44),
+(924, 4672, 44),
+(925, 4676, 44),
+(926, 4680, 44),
+(927, 4684, 44),
+(928, 5524, 45),
+(929, 5563, 45),
+(930, 5564, 45),
+(931, 5593, 45),
+(932, 5596, 45),
+(933, 5599, 45),
+(934, 5600, 45),
+(935, 5602, 45),
+(936, 5606, 45),
+(937, 5610, 45),
+(938, 5611, 45),
+(939, 5613, 45),
+(940, 5615, 45),
+(941, 5617, 45),
+(942, 5618, 45),
+(943, 5619, 45),
+(944, 5623, 45),
+(945, 5626, 45),
+(946, 5635, 45),
+(947, 5642, 45),
+(948, 5645, 45),
+(949, 5647, 45),
+(950, 5648, 45),
+(951, 5650, 45),
+(952, 5652, 45),
+(953, 5659, 45),
+(954, 5665, 45),
+(955, 5669, 45),
+(956, 5670, 45),
+(957, 5673, 45),
+(958, 5678, 45),
+(959, 5681, 45),
+(960, 5682, 45),
+(961, 5683, 45),
+(962, 5684, 45),
+(963, 5686, 45),
+(964, 5689, 45),
+(965, 5696, 45),
+(966, 5702, 45),
+(967, 5260, 38),
+(968, 5261, 38),
+(969, 5343, 38),
+(970, 5344, 38),
+(971, 5345, 38),
+(972, 5346, 38),
+(973, 5347, 38),
+(974, 5349, 38),
+(975, 5460, 38),
+(976, 5518, 38),
+(977, 5539, 38),
+(978, 5546, 38),
+(979, 5547, 38),
+(980, 5556, 38),
+(981, 5586, 38),
+(982, 5589, 38),
+(983, 5612, 38),
+(984, 5628, 38),
+(985, 5629, 38),
+(986, 5641, 38),
+(987, 5643, 38),
+(988, 5649, 38),
+(989, 5657, 38),
+(990, 5667, 38),
+(991, 5707, 38),
+(992, 5730, 38),
+(993, 5763, 38),
+(994, 5825, 38),
+(995, 5848, 38),
+(996, 5855, 38),
+(997, 5859, 38),
+(998, 5864, 38),
+(999, 4688, 37),
+(1000, 4690, 37),
+(1001, 4691, 37),
+(1002, 4692, 37),
+(1003, 4693, 37),
+(1004, 4694, 37),
+(1005, 4695, 37),
+(1006, 4699, 37),
+(1007, 4700, 37),
+(1008, 4701, 37),
+(1009, 4704, 37),
+(1010, 4705, 37),
+(1011, 4706, 37),
+(1012, 4707, 37),
+(1013, 4708, 37),
+(1014, 4794, 37),
+(1015, 4795, 37),
+(1016, 4796, 37),
+(1017, 4797, 37),
+(1018, 4798, 37),
+(1019, 4799, 37),
+(1020, 4803, 37),
+(1021, 4804, 37),
+(1022, 4805, 37),
+(1023, 4806, 37),
+(1024, 4807, 37),
+(1025, 4808, 37),
+(1026, 4809, 37),
+(1027, 4810, 37),
+(1028, 4811, 37),
+(1029, 4812, 37),
+(1030, 5237, 46),
+(1031, 5238, 46),
+(1032, 5239, 46),
+(1033, 5240, 46),
+(1034, 5264, 46),
+(1035, 5398, 46),
+(1036, 5399, 46),
+(1037, 5400, 46),
+(1038, 5401, 46),
+(1039, 5402, 46),
+(1040, 5403, 46),
+(1041, 5404, 46),
+(1042, 5405, 46),
+(1043, 5406, 46),
+(1044, 5465, 46),
+(1045, 5513, 46),
+(1046, 5542, 46),
+(1047, 5543, 46),
+(1048, 5579, 46),
+(1049, 5580, 46),
+(1050, 5581, 46),
+(1051, 5671, 46),
+(1052, 5672, 46),
+(1053, 5679, 46),
+(1054, 5691, 46),
+(1055, 5741, 46),
+(1056, 5770, 46),
+(1057, 5779, 46),
+(1058, 5783, 46),
+(1059, 5788, 46),
+(1060, 5791, 46),
+(1061, 5798, 46),
+(1062, 5840, 46),
+(1063, 5856, 46),
+(1064, 5857, 46),
+(1065, 5858, 46),
+(1066, 4714, 42),
+(1067, 4715, 42),
+(1068, 4717, 42),
+(1069, 4718, 42),
+(1070, 4726, 42),
+(1071, 4727, 42),
+(1072, 4729, 42),
+(1073, 4730, 42),
+(1074, 4731, 42),
+(1075, 4732, 42),
+(1076, 4733, 42),
+(1077, 4734, 42),
+(1078, 4880, 42),
+(1079, 4882, 42),
+(1080, 4883, 42),
+(1081, 4884, 42),
+(1082, 4980, 42),
+(1083, 4986, 42),
+(1084, 4988, 42),
+(1085, 4991, 42),
+(1086, 4998, 42),
+(1087, 5001, 42),
+(1088, 5011, 42),
+(1089, 5066, 42),
+(1090, 5136, 42),
+(1091, 5143, 42),
+(1092, 5172, 42),
+(1093, 5173, 42),
+(1094, 5230, 42),
+(1095, 2279, 47),
+(1096, 2280, 47),
+(1097, 2288, 47),
+(1098, 2290, 47),
+(1099, 2291, 47),
+(1100, 2296, 47),
+(1101, 2305, 47),
+(1102, 2472, 47),
+(1103, 2473, 47),
+(1104, 2474, 47),
+(1105, 2478, 47),
+(1106, 2496, 47),
+(1107, 2510, 47),
+(1108, 2513, 47),
+(1109, 2522, 47),
+(1110, 2531, 47),
+(1111, 2540, 47),
+(1112, 2549, 47),
+(1113, 2550, 47),
+(1149, 5245, 49),
+(1150, 5246, 49),
+(1151, 5247, 49),
+(1152, 5248, 49),
+(1153, 5249, 49),
+(1154, 5265, 49),
+(1155, 5266, 49),
+(1156, 5335, 49),
+(1157, 5336, 49),
+(1158, 5337, 49),
+(1159, 5350, 49),
+(1160, 5351, 49),
+(1161, 5352, 49),
+(1162, 5353, 49),
+(1163, 5354, 49),
+(1164, 5355, 49),
+(1165, 5377, 49),
+(1166, 5378, 49),
+(1167, 5461, 49),
+(1168, 5508, 49),
+(1169, 5511, 49),
+(1170, 5525, 49),
+(1171, 5531, 49),
+(1172, 5540, 49),
+(1173, 5541, 49),
+(1174, 5569, 49),
+(1175, 5578, 49),
+(1176, 5590, 49),
+(1177, 5597, 49),
+(1178, 5758, 49),
+(1179, 5762, 49),
+(1180, 5782, 49),
+(1181, 5836, 49),
+(1182, 5843, 49),
+(1183, 5846, 49),
+(1184, 5851, 49),
+(1185, 5860, 49),
+(1186, 4735, 50),
+(1187, 4736, 50),
+(1188, 4737, 50),
+(1189, 4867, 50),
+(1190, 4869, 50),
+(1191, 4872, 50),
+(1192, 4873, 50),
+(1193, 4875, 50),
+(1194, 4903, 50),
+(1195, 4927, 50),
+(1196, 4931, 50),
+(1197, 4932, 50),
+(1198, 4938, 50),
+(1199, 4942, 50),
+(1200, 4944, 50),
+(1201, 5079, 50),
+(1202, 5093, 50),
+(1203, 5112, 50),
+(1204, 5149, 50),
+(1205, 5163, 50),
+(1207, 5171, 50),
+(1208, 5225, 50),
+(1211, 5170, 50),
+(1212, 2654, 51),
+(1213, 2655, 51),
+(1214, 2656, 51),
+(1215, 2657, 51),
+(1216, 2658, 51),
+(1217, 2659, 51),
+(1218, 2660, 51),
+(1219, 2661, 51),
+(1220, 2662, 51),
+(1221, 2663, 51),
+(1222, 2664, 51),
+(1223, 2665, 51),
+(1224, 2703, 51),
+(1225, 2705, 51),
+(1226, 2706, 51),
+(1227, 2843, 51),
+(1228, 2844, 51),
+(1229, 2942, 51),
+(1230, 2943, 51),
+(1231, 2944, 51),
+(1232, 2945, 51),
+(1233, 2946, 51),
+(1234, 2947, 51),
+(1235, 2948, 51),
+(1236, 2950, 51),
+(1237, 3157, 51),
+(1238, 3158, 51),
+(1239, 3159, 51),
+(1240, 3160, 51),
+(1241, 3161, 51),
+(1242, 3522, 51),
+(1243, 3545, 51),
+(1244, 3602, 51),
+(1245, 3605, 51),
+(1246, 3631, 51);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sub_kategori`
+-- Struktur dari tabel `sub_kategori`
 --
 
 CREATE TABLE `sub_kategori` (
@@ -4329,7 +5204,7 @@ CREATE TABLE `sub_kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `sub_kategori`
+-- Dumping data untuk tabel `sub_kategori`
 --
 
 INSERT INTO `sub_kategori` (`id_sub_kategori`, `nama`, `kategori_id`) VALUES
@@ -4345,31 +5220,31 @@ INSERT INTO `sub_kategori` (`id_sub_kategori`, `nama`, `kategori_id`) VALUES
 (11, 'Membersihkan kamar', 4),
 (12, 'Mencuci piring', 4),
 (13, 'Menyapu rumah', 4),
-(14, 'Membantu menyiapkan makanan', 4),
-(15, 'Tidak membantah  perintah orang tua', 4),
-(16, 'Memberikan segelas air minum kepada ayah atau bunda', 4),
-(17, 'Tidak main gadget lebih dari 2 jam per hari', 5),
+(14, 'Membantu Menyiapkan Makanan', 4),
+(15, 'Tidak Membantah  Perintah Orang Tua', 4),
+(16, 'Memberikan Segelas Air Minum Kepada Ayah atau Bunda', 4),
+(17, 'Tidak Menggunakan Gadget Untuk Kegiatan Unfaedah', 5),
 (18, 'Tidak menonton TV dan Youtube yang tidak berguna dan sia-sia', 5),
-(19, 'Tidak tidur lebih dari pukul 21.30 WIB', 5),
-(20, 'Tidak mencela, memaki dan ngomongin keburukan orang', 6),
-(21, 'Membaca Istighfar 11 x', 7),
-(22, 'membaca subhanallahi wabihamdihi 11x', 7),
-(23, 'Membaca Alhamdulillah 11x', 7),
-(24, 'membaca Allahu Akbar 11x', 7),
-(25, 'Do\'a menjelang tidur', 8),
-(26, 'Doa bangun tidur', 8),
-(27, 'Do\'a makan', 8),
-(28, 'Do\'a untuk orang tua', 8),
-(29, 'menyiram air setelah BAK', 9),
-(30, 'Menyiram air setelah BAB', 9),
-(31, 'BAK dengan cara jongkok', 9),
-(32, 'mengambil wudhu setelah BAK atau BAB', 9),
-(33, 'membaca ikrar 1x di pagi hari', 7);
+(19, 'Tidak Tidur Lebih Dari Pukul 21.30 WIB', 5),
+(20, 'Tidak Mencela, Memaki dan Ngomongin Keburukan Orang', 6),
+(21, 'Membaca Istighfar 33x', 7),
+(22, 'Membaca Subhanallahi Wabihamdihi 33x', 7),
+(23, 'Membaca Alhamdulillah 33x', 7),
+(24, 'Membaca Allahu Akbar 33x', 7),
+(25, 'Do\'a Sebelum Tidur', 8),
+(26, 'Doa Bangun Tidur', 8),
+(27, 'Do\'a Sebelum dan Sesudah Makan', 8),
+(28, 'Do\'a Untuk Orangtua', 8),
+(29, 'Menyiram Air Setelah BAK', 9),
+(30, 'Menyiram Air Setelah BAB', 9),
+(31, 'BAK Dengan Cara Jongkok', 9),
+(32, 'Berwudhu Setelah BAK atau BAB', 9),
+(33, 'Bersholawat Atas Rasulullah SAW', 7);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tahun_akademik`
+-- Struktur dari tabel `tahun_akademik`
 --
 
 CREATE TABLE `tahun_akademik` (
@@ -4378,7 +5253,7 @@ CREATE TABLE `tahun_akademik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tahun_akademik`
+-- Dumping data untuk tabel `tahun_akademik`
 --
 
 INSERT INTO `tahun_akademik` (`id_tahun_akademik`, `nama`) VALUES
@@ -4387,7 +5262,7 @@ INSERT INTO `tahun_akademik` (`id_tahun_akademik`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tingkat`
+-- Struktur dari tabel `tingkat`
 --
 
 CREATE TABLE `tingkat` (
@@ -4396,7 +5271,7 @@ CREATE TABLE `tingkat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tingkat`
+-- Dumping data untuk tabel `tingkat`
 --
 
 INSERT INTO `tingkat` (`id_tingkat`, `nama`) VALUES
@@ -4409,7 +5284,7 @@ INSERT INTO `tingkat` (`id_tingkat`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ttq`
+-- Struktur dari tabel `ttq`
 --
 
 CREATE TABLE `ttq` (
@@ -4423,10 +5298,119 @@ CREATE TABLE `ttq` (
   `kategori_ttq_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `ttq`
+--
+
+INSERT INTO `ttq` (`id_ttq`, `surah`, `tanggal`, `waktu`, `keterangan`, `status_bacaan`, `siswa_id`, `kategori_ttq_id`) VALUES
+(107, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5241, 4),
+(108, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5242, 4),
+(109, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5520, 4),
+(110, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5567, 4),
+(111, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5568, 4),
+(112, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5594, 4),
+(113, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5694, 4),
+(114, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5706, 4),
+(115, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5710, 4),
+(116, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5718, 4),
+(117, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5737, 4),
+(118, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5753, 4),
+(119, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5755, 4),
+(120, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5796, 4),
+(121, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5797, 4),
+(122, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5800, 4),
+(123, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5802, 4),
+(124, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5804, 4),
+(125, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5805, 4),
+(126, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5810, 4),
+(127, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5815, 4),
+(128, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5817, 4),
+(129, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5818, 4),
+(130, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5820, 4),
+(131, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5822, 4),
+(132, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5823, 4),
+(133, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5828, 4),
+(134, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5830, 4),
+(135, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5832, 4),
+(136, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5833, 4),
+(137, 'An-Nas', '2021-10-01', '13:00:00', NULL, 'lancar', 5834, 4),
+(138, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5241, 2),
+(139, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5242, 2),
+(140, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5520, 2),
+(141, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5567, 2),
+(142, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5568, 2),
+(143, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5594, 2),
+(144, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5694, 2),
+(145, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5706, 2),
+(146, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5710, 2),
+(147, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5718, 2),
+(148, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5737, 2),
+(149, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5753, 2),
+(150, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5755, 2),
+(151, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5796, 2),
+(152, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5797, 2),
+(153, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5800, 2),
+(154, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5802, 2),
+(155, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5804, 2),
+(156, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5805, 2),
+(157, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5810, 2),
+(158, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5815, 2),
+(159, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5817, 2),
+(160, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5818, 2),
+(161, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5820, 2),
+(162, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5822, 2),
+(163, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5823, 2),
+(164, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5828, 2),
+(165, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5830, 2),
+(166, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5832, 2),
+(167, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5833, 2),
+(168, 'Al-Falaq', '2021-10-09', '13:00:00', 'Live Online di Meet Link : ses353X32 - File Record pada drive PA Link : 342358fsdkjmdtjkkj', 'lancar', 5834, 2),
+(169, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5241, 1),
+(170, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5242, 1),
+(171, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5520, 1),
+(172, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5567, 1),
+(173, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5568, 1),
+(174, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'belum lancar', 5594, 1),
+(175, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'belum lancar', 5694, 1),
+(176, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'belum lancar', 5706, 1),
+(177, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5710, 1),
+(178, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5718, 1),
+(179, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5737, 1),
+(180, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5753, 1),
+(181, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5755, 1),
+(182, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5796, 1),
+(183, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5797, 1),
+(184, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5800, 1),
+(185, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5802, 1),
+(186, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5804, 1),
+(187, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5805, 1),
+(188, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5810, 1),
+(189, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5815, 1),
+(190, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5817, 1),
+(191, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5818, 1),
+(192, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5820, 1),
+(193, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5822, 1),
+(194, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5823, 1),
+(195, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'lancar', 5828, 1),
+(196, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'belum lancar', 5830, 1),
+(197, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'belum lancar', 5832, 1),
+(198, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'belum lancar', 5833, 1),
+(199, 'An-Naba\'', '2021-10-17', '13:00:00', 'File Video Setoran Hafalan Mhs ybs pada drive PA folder nama mhs ybs pada Link : 342358fsdkjmdtjkkj75', 'belum lancar', 5834, 1),
+(205, 'Surah Alfatihah 6-4', '2021-10-20', '00:30:00', NULL, 'lancar', 4735, 4),
+(206, 'Surah Alfatihah 6-4', '2021-10-20', '00:30:00', NULL, 'belum lancar', 4736, 4),
+(207, 'Surah Alfatihah 6-4', '2021-10-20', '00:30:00', NULL, 'lancar', 4737, 4),
+(208, 'An-Nas', '2021-10-20', '01:30:00', NULL, 'lancar', 2654, 1),
+(209, 'An-Nas', '2021-10-20', '01:30:00', NULL, 'lancar', 2655, 1),
+(210, 'An-Nas', '2021-10-20', '01:30:00', NULL, 'lancar', 2656, 1),
+(211, 'An-Nas', '2021-10-13', '01:30:00', NULL, 'lancar', 2654, 4),
+(212, 'An-Nas', '2021-10-13', '01:30:00', NULL, 'lancar', 2655, 4),
+(213, 'An-Nas', '2021-10-13', '01:30:00', NULL, 'lancar', 2656, 4),
+(214, 'An-Nas', '2021-10-13', '01:30:00', NULL, 'lancar', 2657, 4);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -4439,12 +5423,12 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `forgot`) VALUES
-(1, 'dekanFST', 'e10adc3949ba59abbe56e057f20f883e', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', 'active', ''),
-(272, '130517106\r\n', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(1, 'admin123', '0192023a7bbd73250516f069df18b500', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', 'active', ''),
+(272, '130517106', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (288, '198111132007102003\r\n', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (289, '13210200', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (312, '197403192008012015\r\n', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
@@ -4453,7 +5437,6 @@ INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `fo
 (335, '197608302011011003\r\n', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (358, '197711282007101003\r\n', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (359, '197805082007101007\r\n', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(379, '198612062015031004\r\n', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (380, '198108142006042002\r\n', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (403, '198102062009121003\r\n', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (404, '197710282003122004\r\n', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
@@ -4499,16 +5482,16 @@ INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `fo
 (713, '199305012020121016', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (714, '130514010', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (715, '197410302007011011', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(716, '19830625 200801 1 008', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(717, '19850829 201503 1 002', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(718, '19880630 201503 1 006', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(719, '19721021 200604 2 001', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(720, '19770909 201101 1 005', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(721, '19740719 200604 1 001', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(722, '19760724 200710 1 003', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(723, '19790629 200604 2 001', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(724, '19770803 201101 2 002', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(725, '19841202 201903 1 004', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(716, '198306252008011008', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(717, '198508292015031002', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(718, '198806302015031006', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(719, '197210212006042001', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(720, '197709092011011005', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(721, '197407192006041001', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(722, '197607242007101003', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(723, '197906292006042001', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(724, '197708032011012002', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(725, '198412022019031004', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (726, '130517095', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (727, '197708312009122002', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (728, '197902232008011009', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
@@ -5062,10 +6045,10 @@ INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `fo
 (2893, '12050120480', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (2894, '12050120475', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (2895, '12050120472', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(2896, '12050120465', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
-INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `forgot`) VALUES
+(2896, '12050120465', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (2897, '12050120464', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(2898, '12050120457', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(2898, '12050120457', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
+INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `forgot`) VALUES
 (2899, '12050120436', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (2900, '12050120431', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (2901, '12050120419', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
@@ -5694,10 +6677,10 @@ INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `fo
 (3524, '11751101351', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (3525, '11751101312', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (3526, '11751101289', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(3527, '11751101286', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
-INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `forgot`) VALUES
+(3527, '11751101286', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (3528, '11751101280', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(3529, '11751101240', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(3529, '11751101240', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
+INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `forgot`) VALUES
 (3530, '11751101220', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (3531, '11751101063', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (3532, '11751101018', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
@@ -6326,10 +7309,10 @@ INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `fo
 (4155, '12050312952', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (4156, '12050312937', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (4157, '12050312890', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(4158, '12050312773', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
-INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `forgot`) VALUES
+(4158, '12050312773', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (4159, '12050312714', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(4160, '12050312656', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(4160, '12050312656', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
+INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `forgot`) VALUES
 (4161, '12050312614', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (4162, '12050312613', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (4163, '12050312609', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
@@ -6958,10 +7941,10 @@ INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `fo
 (4786, '12150515103', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (4787, '12150514948', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (4788, '12150514935', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(4789, '12150514584', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
-INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `forgot`) VALUES
+(4789, '12150514584', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (4790, '12150514528', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(4791, '12150514509', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(4791, '12150514509', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
+INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `forgot`) VALUES
 (4792, '12150514410', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (4793, '12150514389', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (4794, '12150514348', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
@@ -7590,10 +8573,10 @@ INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `fo
 (5417, '12150221545', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (5418, '12150221446', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (5419, '12150221289', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(5420, '12150220897', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
-INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `forgot`) VALUES
+(5420, '12150220897', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (5421, '12150220289', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(5422, '12150220251', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(5422, '12150220251', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
+INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `forgot`) VALUES
 (5423, '12150220199', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (5424, '12150220197', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (5425, '12150220183', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
@@ -8204,12 +9187,15 @@ INSERT INTO `users` (`id_users`, `username`, `password`, `cookie`, `status`, `fo
 (6030, '11452105003', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (6031, '11452102443', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
 (6032, '11452101872', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
-(6033, '11452101853', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
+(6033, '11452101853', 'a25cbe0cb4efaf1ee6629535895ca838', NULL, 'active', ''),
+(6035, '198210272015031001', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(6036, '130517050', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL),
+(6041, '198612062015031004', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'active', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_access_management`
+-- Struktur dari tabel `users_access_management`
 --
 
 CREATE TABLE `users_access_management` (
@@ -8223,7 +9209,7 @@ CREATE TABLE `users_access_management` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users_access_management`
+-- Dumping data untuk tabel `users_access_management`
 --
 
 INSERT INTO `users_access_management` (`id_users_access_management`, `users_roles_id`, `menu_management_id`, `create`, `read`, `update`, `delete`) VALUES
@@ -8259,7 +9245,7 @@ INSERT INTO `users_access_management` (`id_users_access_management`, `users_role
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_roles`
+-- Struktur dari tabel `users_roles`
 --
 
 CREATE TABLE `users_roles` (
@@ -8269,7 +9255,7 @@ CREATE TABLE `users_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users_roles`
+-- Dumping data untuk tabel `users_roles`
 --
 
 INSERT INTO `users_roles` (`id_users_roles`, `users_id`, `roles_id`) VALUES
@@ -8283,7 +9269,6 @@ INSERT INTO `users_roles` (`id_users_roles`, `users_id`, `roles_id`) VALUES
 (334, 335, 2),
 (357, 358, 2),
 (358, 359, 2),
-(378, 379, 2),
 (379, 380, 2),
 (402, 403, 2),
 (403, 404, 2),
@@ -11618,9 +12603,9 @@ INSERT INTO `users_roles` (`id_users_roles`, `users_id`, `roles_id`) VALUES
 (5617, 5619, 3),
 (5618, 5620, 3),
 (5619, 5621, 3),
-(5620, 5622, 3);
+(5620, 5622, 3),
+(5621, 5623, 3);
 INSERT INTO `users_roles` (`id_users_roles`, `users_id`, `roles_id`) VALUES
-(5621, 5623, 3),
 (5622, 5624, 3),
 (5623, 5625, 3),
 (5624, 5626, 3),
@@ -12030,54 +13015,58 @@ INSERT INTO `users_roles` (`id_users_roles`, `users_id`, `roles_id`) VALUES
 (6028, 6030, 3),
 (6029, 6031, 3),
 (6030, 6032, 3),
-(6031, 6033, 3);
+(6031, 6033, 3),
+(6033, 6035, 2),
+(6034, 6036, 2),
+(6039, 6041, 2);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`),
   ADD KEY `users_id` (`users_id`);
 
 --
--- Indexes for table `amalan`
+-- Indeks untuk tabel `amalan`
 --
 ALTER TABLE `amalan`
   ADD PRIMARY KEY (`id_amalan`),
   ADD KEY `sub_kategori_id` (`sub_kategori_id`),
-  ADD KEY `siswa_id` (`siswa_id`);
+  ADD KEY `siswa_id` (`siswa_id`),
+  ADD KEY `kelas_siswa_id` (`kelas_siswa_id`);
 
 --
--- Indexes for table `guru`
+-- Indeks untuk tabel `guru`
 --
 ALTER TABLE `guru`
   ADD PRIMARY KEY (`id_guru`),
   ADD KEY `users_id` (`users_id`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `kategori_ttq`
+-- Indeks untuk tabel `kategori_ttq`
 --
 ALTER TABLE `kategori_ttq`
   ADD PRIMARY KEY (`id_kategori_ttq`);
 
 --
--- Indexes for table `kelas`
+-- Indeks untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id_kelas`);
 
 --
--- Indexes for table `kelas_detail`
+-- Indeks untuk tabel `kelas_detail`
 --
 ALTER TABLE `kelas_detail`
   ADD PRIMARY KEY (`id_kelas_detail`),
@@ -12085,7 +13074,7 @@ ALTER TABLE `kelas_detail`
   ADD KEY `kelas_id` (`kelas_id`);
 
 --
--- Indexes for table `kelas_siswa`
+-- Indeks untuk tabel `kelas_siswa`
 --
 ALTER TABLE `kelas_siswa`
   ADD PRIMARY KEY (`id_kelas_siswa`),
@@ -12093,26 +13082,27 @@ ALTER TABLE `kelas_siswa`
   ADD KEY `tahun_akademik_id` (`tahun_akademik_id`);
 
 --
--- Indexes for table `menu_management`
+-- Indeks untuk tabel `menu_management`
 --
 ALTER TABLE `menu_management`
   ADD PRIMARY KEY (`id_menu_management`);
 
 --
--- Indexes for table `roles`
+-- Indeks untuk tabel `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id_roles`);
 
 --
--- Indexes for table `roles_yaumiyah`
+-- Indeks untuk tabel `roles_yaumiyah`
 --
 ALTER TABLE `roles_yaumiyah`
   ADD PRIMARY KEY (`id_roles_yaumiyah`),
-  ADD KEY `kelas_id` (`kelas_id`);
+  ADD KEY `kelas_id` (`kelas_id`),
+  ADD KEY `users_id` (`users_id`);
 
 --
--- Indexes for table `roles_yaumiyah_detail`
+-- Indeks untuk tabel `roles_yaumiyah_detail`
 --
 ALTER TABLE `roles_yaumiyah_detail`
   ADD PRIMARY KEY (`id_roles_yaumiyah_detail`),
@@ -12120,14 +13110,14 @@ ALTER TABLE `roles_yaumiyah_detail`
   ADD KEY `kategori_id` (`kategori_id`);
 
 --
--- Indexes for table `siswa`
+-- Indeks untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id_siswa`),
   ADD KEY `users_id` (`users_id`);
 
 --
--- Indexes for table `siswa_kelas`
+-- Indeks untuk tabel `siswa_kelas`
 --
 ALTER TABLE `siswa_kelas`
   ADD PRIMARY KEY (`id_siswa_kelas`),
@@ -12135,26 +13125,26 @@ ALTER TABLE `siswa_kelas`
   ADD KEY `siswa_id` (`siswa_id`);
 
 --
--- Indexes for table `sub_kategori`
+-- Indeks untuk tabel `sub_kategori`
 --
 ALTER TABLE `sub_kategori`
   ADD PRIMARY KEY (`id_sub_kategori`),
   ADD KEY `kategori_id` (`kategori_id`);
 
 --
--- Indexes for table `tahun_akademik`
+-- Indeks untuk tabel `tahun_akademik`
 --
 ALTER TABLE `tahun_akademik`
   ADD PRIMARY KEY (`id_tahun_akademik`);
 
 --
--- Indexes for table `tingkat`
+-- Indeks untuk tabel `tingkat`
 --
 ALTER TABLE `tingkat`
   ADD PRIMARY KEY (`id_tingkat`);
 
 --
--- Indexes for table `ttq`
+-- Indeks untuk tabel `ttq`
 --
 ALTER TABLE `ttq`
   ADD PRIMARY KEY (`id_ttq`),
@@ -12162,13 +13152,13 @@ ALTER TABLE `ttq`
   ADD KEY `kategori_ttq_id` (`kategori_ttq_id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_users`);
 
 --
--- Indexes for table `users_access_management`
+-- Indeks untuk tabel `users_access_management`
 --
 ALTER TABLE `users_access_management`
   ADD PRIMARY KEY (`id_users_access_management`),
@@ -12176,7 +13166,7 @@ ALTER TABLE `users_access_management`
   ADD KEY `users_access_management_ibfk_2` (`users_roles_id`);
 
 --
--- Indexes for table `users_roles`
+-- Indeks untuk tabel `users_roles`
 --
 ALTER TABLE `users_roles`
   ADD PRIMARY KEY (`id_users_roles`),
@@ -12184,683 +13174,225 @@ ALTER TABLE `users_roles`
   ADD KEY `users_id` (`users_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `amalan`
+-- AUTO_INCREMENT untuk tabel `amalan`
 --
 ALTER TABLE `amalan`
-  MODIFY `id_amalan` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158581;
+  MODIFY `id_amalan` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158830;
 
 --
--- AUTO_INCREMENT for table `guru`
+-- AUTO_INCREMENT untuk tabel `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `kategori_ttq`
+-- AUTO_INCREMENT untuk tabel `kategori_ttq`
 --
 ALTER TABLE `kategori_ttq`
   MODIFY `id_kategori_ttq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `kelas`
+-- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
--- AUTO_INCREMENT for table `kelas_detail`
+-- AUTO_INCREMENT untuk tabel `kelas_detail`
 --
 ALTER TABLE `kelas_detail`
-  MODIFY `id_kelas_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id_kelas_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
 
 --
--- AUTO_INCREMENT for table `kelas_siswa`
+-- AUTO_INCREMENT untuk tabel `kelas_siswa`
 --
 ALTER TABLE `kelas_siswa`
-  MODIFY `id_kelas_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_kelas_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT for table `menu_management`
+-- AUTO_INCREMENT untuk tabel `menu_management`
 --
 ALTER TABLE `menu_management`
   MODIFY `id_menu_management` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT untuk tabel `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id_roles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `roles_yaumiyah`
+-- AUTO_INCREMENT untuk tabel `roles_yaumiyah`
 --
 ALTER TABLE `roles_yaumiyah`
-  MODIFY `id_roles_yaumiyah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_roles_yaumiyah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `roles_yaumiyah_detail`
+-- AUTO_INCREMENT untuk tabel `roles_yaumiyah_detail`
 --
 ALTER TABLE `roles_yaumiyah_detail`
-  MODIFY `id_roles_yaumiyah_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_roles_yaumiyah_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=296;
 
 --
--- AUTO_INCREMENT for table `siswa`
+-- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5871;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5872;
 
 --
--- AUTO_INCREMENT for table `siswa_kelas`
+-- AUTO_INCREMENT untuk tabel `siswa_kelas`
 --
 ALTER TABLE `siswa_kelas`
-  MODIFY `id_siswa_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=878;
+  MODIFY `id_siswa_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1247;
 
 --
--- AUTO_INCREMENT for table `sub_kategori`
+-- AUTO_INCREMENT untuk tabel `sub_kategori`
 --
 ALTER TABLE `sub_kategori`
   MODIFY `id_sub_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT for table `tahun_akademik`
+-- AUTO_INCREMENT untuk tabel `tahun_akademik`
 --
 ALTER TABLE `tahun_akademik`
-  MODIFY `id_tahun_akademik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tahun_akademik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tingkat`
+-- AUTO_INCREMENT untuk tabel `tingkat`
 --
 ALTER TABLE `tingkat`
   MODIFY `id_tingkat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `ttq`
+-- AUTO_INCREMENT untuk tabel `ttq`
 --
 ALTER TABLE `ttq`
-  MODIFY `id_ttq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id_ttq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=215;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6034;
+  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6042;
 
 --
--- AUTO_INCREMENT for table `users_access_management`
+-- AUTO_INCREMENT untuk tabel `users_access_management`
 --
 ALTER TABLE `users_access_management`
   MODIFY `id_users_access_management` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT for table `users_roles`
+-- AUTO_INCREMENT untuk tabel `users_roles`
 --
 ALTER TABLE `users_roles`
-  MODIFY `id_users_roles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6032;
+  MODIFY `id_users_roles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6040;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `admin`
+-- Ketidakleluasaan untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id_users`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `amalan`
+-- Ketidakleluasaan untuk tabel `amalan`
 --
 ALTER TABLE `amalan`
   ADD CONSTRAINT `amalan_ibfk_1` FOREIGN KEY (`sub_kategori_id`) REFERENCES `sub_kategori` (`id_sub_kategori`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `amalan_ibfk_2` FOREIGN KEY (`siswa_id`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `amalan_ibfk_2` FOREIGN KEY (`siswa_id`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `amalan_ibfk_3` FOREIGN KEY (`kelas_siswa_id`) REFERENCES `kelas_siswa` (`id_kelas_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `guru`
+-- Ketidakleluasaan untuk tabel `guru`
 --
 ALTER TABLE `guru`
   ADD CONSTRAINT `guru_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id_users`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `kelas_detail`
+-- Ketidakleluasaan untuk tabel `kelas_detail`
 --
 ALTER TABLE `kelas_detail`
   ADD CONSTRAINT `kelas_detail_ibfk_1` FOREIGN KEY (`guru_id`) REFERENCES `guru` (`id_guru`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kelas_detail_ibfk_2` FOREIGN KEY (`kelas_id`) REFERENCES `kelas` (`id_kelas`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `kelas_siswa`
+-- Ketidakleluasaan untuk tabel `kelas_siswa`
 --
 ALTER TABLE `kelas_siswa`
   ADD CONSTRAINT `kelas_siswa_ibfk_1` FOREIGN KEY (`kelas_id`) REFERENCES `kelas` (`id_kelas`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kelas_siswa_ibfk_2` FOREIGN KEY (`tahun_akademik_id`) REFERENCES `tahun_akademik` (`id_tahun_akademik`);
 
 --
--- Constraints for table `roles_yaumiyah`
+-- Ketidakleluasaan untuk tabel `roles_yaumiyah`
 --
 ALTER TABLE `roles_yaumiyah`
   ADD CONSTRAINT `roles_yaumiyah_ibfk_1` FOREIGN KEY (`kelas_id`) REFERENCES `kelas` (`id_kelas`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `roles_yaumiyah_detail`
+-- Ketidakleluasaan untuk tabel `roles_yaumiyah_detail`
 --
 ALTER TABLE `roles_yaumiyah_detail`
   ADD CONSTRAINT `roles_yaumiyah_detail_ibfk_1` FOREIGN KEY (`roles_yaumiyah_id`) REFERENCES `roles_yaumiyah` (`id_roles_yaumiyah`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `roles_yaumiyah_detail_ibfk_2` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`id_kategori`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `siswa`
+-- Ketidakleluasaan untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
   ADD CONSTRAINT `siswa_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id_users`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `siswa_kelas`
+-- Ketidakleluasaan untuk tabel `siswa_kelas`
 --
 ALTER TABLE `siswa_kelas`
   ADD CONSTRAINT `siswa_kelas_ibfk_1` FOREIGN KEY (`kelas_siswa_id`) REFERENCES `kelas_siswa` (`id_kelas_siswa`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `siswa_kelas_ibfk_2` FOREIGN KEY (`siswa_id`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `sub_kategori`
+-- Ketidakleluasaan untuk tabel `sub_kategori`
 --
 ALTER TABLE `sub_kategori`
   ADD CONSTRAINT `sub_kategori_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`id_kategori`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `ttq`
+-- Ketidakleluasaan untuk tabel `ttq`
 --
 ALTER TABLE `ttq`
   ADD CONSTRAINT `ttq_ibfk_1` FOREIGN KEY (`siswa_id`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `ttq_ibfk_2` FOREIGN KEY (`kategori_ttq_id`) REFERENCES `kategori_ttq` (`id_kategori_ttq`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `users_access_management`
+-- Ketidakleluasaan untuk tabel `users_access_management`
 --
 ALTER TABLE `users_access_management`
   ADD CONSTRAINT `users_access_management_ibfk_1` FOREIGN KEY (`menu_management_id`) REFERENCES `menu_management` (`id_menu_management`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `users_access_management_ibfk_2` FOREIGN KEY (`users_roles_id`) REFERENCES `roles` (`id_roles`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `users_roles`
+-- Ketidakleluasaan untuk tabel `users_roles`
 --
 ALTER TABLE `users_roles`
   ADD CONSTRAINT `users_roles_ibfk_1` FOREIGN KEY (`roles_id`) REFERENCES `roles` (`id_roles`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `users_roles_ibfk_2` FOREIGN KEY (`users_id`) REFERENCES `users` (`id_users`) ON DELETE CASCADE ON UPDATE CASCADE;
---
--- Database: `phpmyadmin`
---
-CREATE DATABASE IF NOT EXISTS `phpmyadmin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `phpmyadmin`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__bookmark`
---
-
-CREATE TABLE `pma__bookmark` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `dbase` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `user` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `label` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `query` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Bookmarks';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__central_columns`
---
-
-CREATE TABLE `pma__central_columns` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_type` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_length` text COLLATE utf8_bin DEFAULT NULL,
-  `col_collation` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_isNull` tinyint(1) NOT NULL,
-  `col_extra` varchar(255) COLLATE utf8_bin DEFAULT '',
-  `col_default` text COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Central list of columns';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__column_info`
---
-
-CREATE TABLE `pma__column_info` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `column_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `comment` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `mimetype` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `transformation` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `transformation_options` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `input_transformation` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `input_transformation_options` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Column information for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__designer_settings`
---
-
-CREATE TABLE `pma__designer_settings` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `settings_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Settings related to Designer';
-
---
--- Dumping data for table `pma__designer_settings`
---
-
-INSERT INTO `pma__designer_settings` (`username`, `settings_data`) VALUES
-('root', '{\"relation_lines\":\"true\",\"angular_direct\":\"direct\",\"snap_to_grid\":\"off\"}');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__export_templates`
---
-
-CREATE TABLE `pma__export_templates` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `export_type` varchar(10) COLLATE utf8_bin NOT NULL,
-  `template_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `template_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved export templates';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__favorite`
---
-
-CREATE TABLE `pma__favorite` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tables` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Favorite tables';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__history`
---
-
-CREATE TABLE `pma__history` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `timevalue` timestamp NOT NULL DEFAULT current_timestamp(),
-  `sqlquery` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='SQL history for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__navigationhiding`
---
-
-CREATE TABLE `pma__navigationhiding` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `item_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `item_type` varchar(64) COLLATE utf8_bin NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Hidden items of navigation tree';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__pdf_pages`
---
-
-CREATE TABLE `pma__pdf_pages` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `page_nr` int(10) UNSIGNED NOT NULL,
-  `page_descr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__recent`
---
-
-CREATE TABLE `pma__recent` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tables` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
-
---
--- Dumping data for table `pma__recent`
---
-
-INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{\"db\":\"bimbinganakademik\",\"table\":\"kelas_detail\"},{\"db\":\"bimbinganakademik\",\"table\":\"kelas_siswa\"},{\"db\":\"bimbinganakademik\",\"table\":\"menu_management\"},{\"db\":\"bimbinganakademik\",\"table\":\"roles\"},{\"db\":\"bimbinganakademik\",\"table\":\"roles_yaumiyah\"},{\"db\":\"bimbinganakademik\",\"table\":\"roles_yaumiyah_detail\"},{\"db\":\"bimbinganakademik\",\"table\":\"siswa\"},{\"db\":\"bimbinganakademik\",\"table\":\"siswa_kelas\"},{\"db\":\"bimbinganakademik\",\"table\":\"sub_kategori\"},{\"db\":\"bimbinganakademik\",\"table\":\"tahun_akademik\"}]');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__relation`
---
-
-CREATE TABLE `pma__relation` (
-  `master_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `master_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `master_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Relation table';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__savedsearches`
---
-
-CREATE TABLE `pma__savedsearches` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `search_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `search_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved searches';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__table_coords`
---
-
-CREATE TABLE `pma__table_coords` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `pdf_page_number` int(11) NOT NULL DEFAULT 0,
-  `x` float UNSIGNED NOT NULL DEFAULT 0,
-  `y` float UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__table_info`
---
-
-CREATE TABLE `pma__table_info` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `display_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table information for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__table_uiprefs`
---
-
-CREATE TABLE `pma__table_uiprefs` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `prefs` text COLLATE utf8_bin NOT NULL,
-  `last_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
-
---
--- Dumping data for table `pma__table_uiprefs`
---
-
-INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
-('root', 'bimbinganakademik', 'guru', '{\"sorted_col\":\"`nomor_induk`  DESC\"}', '2021-10-04 04:53:39'),
-('root', 'bimbinganakademik', 'users', '{\"sorted_col\":\"`id_users`  DESC\"}', '2021-10-05 20:02:16');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__tracking`
---
-
-CREATE TABLE `pma__tracking` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `version` int(10) UNSIGNED NOT NULL,
-  `date_created` datetime NOT NULL,
-  `date_updated` datetime NOT NULL,
-  `schema_snapshot` text COLLATE utf8_bin NOT NULL,
-  `schema_sql` text COLLATE utf8_bin DEFAULT NULL,
-  `data_sql` longtext COLLATE utf8_bin DEFAULT NULL,
-  `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') COLLATE utf8_bin DEFAULT NULL,
-  `tracking_active` int(1) UNSIGNED NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Database changes tracking for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__userconfig`
---
-
-CREATE TABLE `pma__userconfig` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `timevalue` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `config_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User preferences storage for phpMyAdmin';
-
---
--- Dumping data for table `pma__userconfig`
---
-
-INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2021-10-08 05:34:45', '{\"Console\\/Mode\":\"collapse\",\"NavigationWidth\":224.66666412353516}');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__usergroups`
---
-
-CREATE TABLE `pma__usergroups` (
-  `usergroup` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tab` varchar(64) COLLATE utf8_bin NOT NULL,
-  `allowed` enum('Y','N') COLLATE utf8_bin NOT NULL DEFAULT 'N'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User groups with configured menu items';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__users`
---
-
-CREATE TABLE `pma__users` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `usergroup` varchar(64) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and their assignments to user groups';
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `pma__bookmark`
---
-ALTER TABLE `pma__bookmark`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `pma__central_columns`
---
-ALTER TABLE `pma__central_columns`
-  ADD PRIMARY KEY (`db_name`,`col_name`);
-
---
--- Indexes for table `pma__column_info`
---
-ALTER TABLE `pma__column_info`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
-
---
--- Indexes for table `pma__designer_settings`
---
-ALTER TABLE `pma__designer_settings`
-  ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma__export_templates`
---
-ALTER TABLE `pma__export_templates`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `u_user_type_template` (`username`,`export_type`,`template_name`);
-
---
--- Indexes for table `pma__favorite`
---
-ALTER TABLE `pma__favorite`
-  ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma__history`
---
-ALTER TABLE `pma__history`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
-
---
--- Indexes for table `pma__navigationhiding`
---
-ALTER TABLE `pma__navigationhiding`
-  ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
-
---
--- Indexes for table `pma__pdf_pages`
---
-ALTER TABLE `pma__pdf_pages`
-  ADD PRIMARY KEY (`page_nr`),
-  ADD KEY `db_name` (`db_name`);
-
---
--- Indexes for table `pma__recent`
---
-ALTER TABLE `pma__recent`
-  ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma__relation`
---
-ALTER TABLE `pma__relation`
-  ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`),
-  ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
-
---
--- Indexes for table `pma__savedsearches`
---
-ALTER TABLE `pma__savedsearches`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
-
---
--- Indexes for table `pma__table_coords`
---
-ALTER TABLE `pma__table_coords`
-  ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
-
---
--- Indexes for table `pma__table_info`
---
-ALTER TABLE `pma__table_info`
-  ADD PRIMARY KEY (`db_name`,`table_name`);
-
---
--- Indexes for table `pma__table_uiprefs`
---
-ALTER TABLE `pma__table_uiprefs`
-  ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
-
---
--- Indexes for table `pma__tracking`
---
-ALTER TABLE `pma__tracking`
-  ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
-
---
--- Indexes for table `pma__userconfig`
---
-ALTER TABLE `pma__userconfig`
-  ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma__usergroups`
---
-ALTER TABLE `pma__usergroups`
-  ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
-
---
--- Indexes for table `pma__users`
---
-ALTER TABLE `pma__users`
-  ADD PRIMARY KEY (`username`,`usergroup`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `pma__bookmark`
---
-ALTER TABLE `pma__bookmark`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pma__column_info`
---
-ALTER TABLE `pma__column_info`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `pma__export_templates`
---
-ALTER TABLE `pma__export_templates`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pma__history`
---
-ALTER TABLE `pma__history`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pma__pdf_pages`
---
-ALTER TABLE `pma__pdf_pages`
-  MODIFY `page_nr` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pma__savedsearches`
---
-ALTER TABLE `pma__savedsearches`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
