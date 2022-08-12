@@ -1,0 +1,72 @@
+@font-face {
+    font-family: Poppins;
+    src: url('../fonts/Poppins-Medium.ttf');
+  }
+  .poppins{
+      font-family: Poppins;
+  }
+.right_col{
+    min-height: 850px !important;
+}
+.relative {
+    position: relative;
+}
+
+nav#menu_siswa ul li a {
+    color: #323a46 !important;
+    transition: color 0.5s ease-out;
+}
+
+nav#menu_siswa ul li a:hover {
+    color: #5fdde5 !important;
+}
+
+nav#menu_siswa ul li a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+    -webkit-transform: translateX(-50%) scaleX(1);
+}
+
+nav#menu_siswa ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    -webkit-transform: translateX(-50%) scaleX(0);
+    transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    color: #5fdde5 !important;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(26, 24, 24, 0.9);
+    transition: transform 250ms;
+    -webkit-transition: transform 250ms;
+}
+
+nav#menu_siswa ul.navbar-nav li.active a {
+    color: #5fdde5 !important;
+    border-bottom: 2px solid rgba(26, 24, 24, 0.9);
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #f4f6ff;
+}
+
+#wrapper a {
+    text-decoration: none;
+}
+#wrapper li a {
+    text-decoration: none !important;
+}
+
+/* Responsive */
+@media (max-width: 460px) {
+#menu_siswa_header .container a span{
+    display: none;
+    }
+}
